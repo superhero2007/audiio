@@ -1,0 +1,31 @@
+<div class="hero-inner-container artists">
+  <div class="hero-content">
+    <h1>Indie</h1>
+    <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur.</p>
+    <div class="btn-holder center-table">
+      <button md-button class="btn btn-small btn-invert block fl m-r-medium" >Play</button>
+      <button md-button class="btn btn-small btn-invert block fl m-l-large" >Share</button>
+    </div>
+  </div>
+  <div class="hero-inner-tint"></div>
+  <div class="hero-inner artist" style="background-image:url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/genre-banner.jpg);"></div>
+</div>
+
+<div class="flex-content m-b-large">
+  <section class="browse m-l-large m-r-large m-b-large">
+    <h4 class="m-tb-medium m-0">Most Popular Tracks <strong class="uppercase font-medium txt-primary m-l-medium" [routerLink]="['/browse']">Browse All Tracks</strong></h4>
+
+    <app-track></app-track>
+    <app-track></app-track>
+    <app-track></app-track>
+    <app-track></app-track>
+
+
+  </section>
+
+
+</div>
+
+
+<app-related-artists> </app-related-artists>
+<app-featured-playlists> </app-featured-playlists>

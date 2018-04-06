@@ -1,0 +1,241 @@
+:host {
+  .page {
+    margin-top: 90px;
+  }
+}
+.page {
+  background: #fff;
+}
+
+.headline {
+  position: relative;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  h1, h2 {
+    color: #fff;
+    font-weight: normal;
+    margin: 0;
+  }
+;
+
+  h1 {
+    position: relative;
+    top: 30%;
+    font-size: 80px;
+    font-weight: 900;
+    font-family: SourceSansPro-Bold, sans-serif;
+  }
+
+  h2 {
+    top: 55%;
+    position: relative;
+    font-size: 30px;
+    letter-spacing: 5px;
+  }
+  height: 100%;
+}
+
+.logo-row {
+  display: flex;
+  justify-content: space-around;
+  article {
+    flex: 5;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4em;
+    margin-top: 4em;
+    text-align: center;
+
+    p {
+      padding: 0 13%;
+    }
+  }
+}
+
+.logo-block {
+  flex: 1;
+  min-width: 145px;
+  min-height: 71px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  &.apple {
+    background-image: url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/logos/apple-logo.png);
+  }
+  &.adidas {
+    background-image: url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/logos/logo-adidas.png);
+  }
+  &.uber {
+    background-image: url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/logos/logo-uber.png);
+  }
+  &.airbnb {
+    background-image: url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/logos/logo-airbnb.png);
+  }
+  &.cocacola {
+    background-image: url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/logos/logo-cocacola.png);
+  }
+  &.espn {
+    background-image: url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/logos/logo-espn.png);
+  }
+  &.ferrari {
+    background-image: url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/logos/logo-ferrari.png);
+  }
+  &.abc {
+    background-image: url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/logos/logo-abc.png);
+  }
+  &.nike {
+    background-image: url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/logos/logo-nike.png);
+  }
+  &.google {
+    background-image: url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/logos/logo-google.png);
+  }
+  &.netflix {
+    background-image: url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/logos/logo-netflix.png);
+  }
+  &.nbc {
+    background-image: url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/logos/logo-nbc.png);
+  }
+  &.jaguar {
+    background-image: url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/logos/logo-jaguar.png);
+  }
+  &.hulu {
+    background-image: url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/logos/logo-hulu.png);
+  }
+  &.wb {
+    background-image: url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/logos/logo-wb.png);
+  }
+  &.redbull {
+    background-image: url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/logos/logo-redbull.png);
+  }
+
+}
+
+#about-top-banner {
+  background-image: url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/about-2880x1206.jpg);
+  background-position: center;
+  /*background-attachment: fixed;*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*height: 1206px;*/
+  text-align: center;
+  color: #fff;
+  margin-bottom: 3em;
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+#about-lower-banner {
+  margin-top: 3em;
+  background-color: #282828;
+  height: 400px;
+  text-align: center;
+  color: #fff;
+
+  h1 {
+    color: #fff;
+    position: relative;
+    top: 1.5em;
+    font-size: 3.5em;
+    font-weight: normal;
+    font-family: SourceSansPro-Bold, sans-serif;
+  }
+
+  .buttons {
+    position: relative;
+    top: 6em;
+
+    .btn {
+      &.btn-primary {
+        padding: .75em 3em;
+        font-weight: normal;
+        font-family: SourceSansPro, sans-serif;
+        text-transform: none;
+        border-radius: 7px;
+        margin-bottom: 1.5em;
+        background:none;
+        border-color:white;
+        color:white;
+      }
+    }
+  }
+
+}
+
+#hiring {
+  h2 {
+    font-size: 1.25em;
+
+    div.border {
+      background: #dedede;
+      height: 2px;
+      margin: .25em 12em;
+    }
+  }
+  text-align: center;
+  padding: 0 30%;
+  padding-bottom: 3em;
+  padding-top: 2em;
+
+  button {
+    margin: 2.25em auto 0;
+    padding: .5em 2em;
+    border-radius: 7px;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: block;
+    position: relative;
+    width: 360px;
+    left: 17%;
+
+  }
+}
+
+
+@media (max-width: 800px) {
+
+  .logo-block {
+    display:none;
+  }
+  .logo-row {
+    overflow:hidden;
+
+    article{
+      margin:0;
+    }
+  }
+  #about-lower-banner {
+    height:300px;
+    h1{
+      font-size:130%;
+    }
+  }
+  .logo-block{
+    min-width: 50px;
+    min-height: 50px;
+    background-size: contain;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .headline h2 {
+    font-size:16px;
+  }
+  #hiring {
+    left: auto;
+    width: auto;
+    padding: 50px;
+    p {
+      width:auto;
+      left:auto;
+
+    }
+  }
+}

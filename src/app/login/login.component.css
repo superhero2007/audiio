@@ -1,0 +1,38 @@
+.dialog {
+  padding:60px 90px;
+  position: relative;
+  width:300px;
+}
+
+.icon-close {
+  top: 0;
+  position: absolute;
+  right: 0;
+  width: 30px;
+  height: 30px;
+}
+md-input-container {
+  width:100%;
+  margin-bottom:10px;
+}
+
+h1 {
+  margin-bottom:20px
+}
+
+button.btn.btn-primary, .btn-primary {
+  text-align: center;
+  margin: 30px auto 30px auto;
+}
+md-checkbox {
+  font-family: SourceSansPro-Regular;
+  font-size: 14px;
+  color: #656565;
+}
+
+.sign-up {
+  font-family: SourceSansPro-Regular;
+  text-align: center;
+  bottom: 19px;
+  font-weight:100;
+}

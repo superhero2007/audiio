@@ -1,0 +1,24 @@
+<div class="dialog">
+  <span class="m-r-medium m-t-medium fr icon no-text icon-close login" (click)="onClose()">close</span>
+  <form class="" [formGroup]="form" (ngSubmit)="submitForm(form)">
+    <div class="headline">
+      <h1 class="center m-b-medium">Login </h1>
+      <p class="error">{{error}}</p>
+    </div>
+
+    <div class="body">
+    <md-input-container class="full">
+      <input mdInput formControlName="email" type="email" placeholder="Email">
+    </md-input-container>
+    <md-input-container class="full">
+      <input mdInput formControlName="password" type="password" placeholder="Password">
+    </md-input-container>
+    <md-checkbox formControlName="remember" class=" m-b-large f-normal">Remember me!</md-checkbox>
+    <a class="fr links f-normal font-medium bold" (click)="onForgotPassword()">Forgot Password?</a>
+    <button md-button class="clear center btn btn-lg btn-primary btn-block btn-signin" type="submit">Login</button>
+    </div>
+  </form>
+
+  <p class="sign-up">Don't have an account yet? <a class="txt-secondary" (click)="onSignUp()">Sign Up</a></p>
+
+</div>

@@ -1,0 +1,33 @@
+<div class="page">
+  <div class="hero-inner-headline checkout">
+    <div class="hero-content">
+      <h1>Enjoy Your Music</h1>
+    </div>
+  </div>
+
+  <article class="checkout content">
+    <!--<button (click)="openCheckout()">Purchase</button>-->
+    <h1>Thank you for your purchase! </h1>
+    <p>You are all set! You will receive an email confirmation of this purchase with a link to download your track and license information. You can also find all your recent purchase information in your account. Why wait… download your  track now! </p>
+
+    <md-toolbar style="width:100%" color="secondary" class="" >
+      <span class="sm-caps">Track Name</span>
+      <span class="sm-caps m-l-medium">Order Number</span>
+      <span class="sm-caps m-r-small">Purchase Date</span>
+      <span class="sm-caps m-r-large">Receipt</span>
+      <span class="sm-caps m-r-medium">Downloads</span>
+    </md-toolbar>
+    <div class="border-bottom">
+       <app-track-download
+        [track]="track"
+        [title]="track?.title"
+        [order_number]="track?.order_number"
+        [purchase_date]="track?.purchase_date"
+        [expiration_date]="expiration_date"
+        [contract]="contract"
+        [download]="download"
+      ></app-track-download>
+    </div>
+
+  </article>
+</div>

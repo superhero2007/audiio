@@ -1,0 +1,24 @@
+/* ----------- iPhone 6 ----------- */
+@media (max-width: 800px) {
+
+  nav ul.account-menu {
+    top: 90px;
+
+    li a.is-active {
+      margin: 0;
+      padding: 0;
+    }
+
+    li a {
+      padding:3%;
+      font-size: 80%;
+      padding-bottom: 5px;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  nav ul.account-menu li a {
+    padding:3%;
+  }
+}

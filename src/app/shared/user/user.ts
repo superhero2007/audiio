@@ -1,0 +1,20 @@
+export interface User {
+  firstName?: string,
+  first_name?:string,
+  last_name?:string,
+  lastName?: string,
+  email?: string,
+  id?: number,
+  password?:string,
+  address?:string,
+  city?:string,
+  state?:string,
+  postal_code?:string,
+  phone?:string,
+  client?:string,
+  term?:string,
+  budget?:string,
+  details?:string,
+  license?:any,
+  remember?:any
+}

@@ -1,0 +1,40 @@
+<div class="page" >
+  <div class="hero-inner-container album">
+    <div class="hero-content">
+      <!--<div class="thumb" style="background-image:url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/thumb-song.jpg);"></div>-->
+      <h1></h1>
+      <p></p>
+
+    </div>
+    <div class="hero-inner-tint dark"></div>
+
+  </div>
+
+  <div class="flex-content m-b-large">
+    <section class="browse m-l-large m-r-large m-b-large ">
+      <h4 class="m-tb-medium m-0">Tracks</h4>
+
+      <div *ngIf="!hasTracks">
+        <div class="no-results">No tracks found.</div>
+      </div>
+      <span *ngIf="hasTracks">
+          <span *ngFor="let track of tracks">
+            <app-track
+              [track]="track"
+              [title]="track.title"
+              [artist]="track?.artist?.name"
+              [playtime_min]="track?.playtime_min"
+              [playtime_sec]="track?.playtime_sec"
+            ></app-track>
+          </span>
+        </span>
+
+
+    </section>
+
+
+  </div>
+
+
+  <app-featured-playlists></app-featured-playlists>
+</div>

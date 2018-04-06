@@ -1,0 +1,46 @@
+<div class="playlistContainer">
+  <div class="desktop hero-inner-container playlist">
+    <div class="hero-content">
+      <h1>Featured Playlists</h1>
+
+    </div>
+    <div class="hero-inner-tint"></div>
+    <!--<div class="hero-inner artist" style="background-image:url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/featured-playlist-banner.jpg);"></div>-->
+    <div class="hero-inner artist"></div>
+  </div>
+
+
+  <section class="m-r-large m-l-large m-b-large overflow">
+    <h4 class="m-tb-medium m-0">Playlists </h4>
+
+    <div *ngIf="playlists === -1">
+      <div class="no-results">No playlis found.</div>
+    </div>
+    <div class="playlist-thumbs" *ngIf="playlists !== -1">
+      <span *ngFor="let list of playlists">
+
+
+        <md-card class="card tint-content cursor"[routerLinkActive]="['is-active']" [routerLink]="['/playlists', list.slug]" >
+          <h3>{{list.title}}</h3>
+          <p>{{list.created_by}}</p>
+          <div class="tint"></div>
+
+          <div class="thumb">
+            <img src="{{path+list.image }}">
+          </div>
+          <!--  [ngStyle]="{'background-image': 'url(https://54.149.242.29/storage/app/media' + list.image + ')'}" -->
+          <!--<div class="thumb" style="background-image: url('https://54.149.242.29/storage/app/media/Abe album artwork rockies.jpg')"></div>-->
+          <!--<div class="thumb" [ngStyle]="{'background-image': 'url(' + track_thumb + ')'}" ></div>-->
+          <!--<span *ngIf="list?.image?.length > 0" class="track-thumb icon m-r-small cursor  hover-primary">
+            <img src="https://54.149.242.29/storage/app/media{{list.image}}">
+          </span>-->
+
+        </md-card>
+      </span>
+    </div>
+
+
+
+
+  </section>
+</div>

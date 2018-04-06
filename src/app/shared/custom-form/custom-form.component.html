@@ -1,0 +1,17 @@
+<div class="dialog">
+  <span class="m-r-medium m-t-medium fr icon no-text icon-close login" (click)="onClose()">close</span>
+  <form class="" [formGroup]="custom" (ngSubmit)="submitForm(form)">
+    <div class="headline">
+      <h1 class="center m-b-medium">Quote Request</h1>
+      <p>We will send you pricing info within minutes! </p>
+      <p class="error">{{error}}</p>
+    </div>
+
+    <div class="body">
+      <md-input-container><input formControlName="first_name" mdInput placeholder="First Name"> </md-input-container>
+      <md-input-container><input formControlName="last_name" mdInput placeholder="Last Name"> </md-input-container>
+      <md-input-container class=""><input formControlName="email" mdInput placeholder="Email"> </md-input-container>
+      <button md-button class="clear center btn btn-lg btn-green btn-primary btn-block btn-signin" type="submit">Get Price</button>
+    </div>
+  </form>
+</div>

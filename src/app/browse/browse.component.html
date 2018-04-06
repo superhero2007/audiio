@@ -1,0 +1,171 @@
+<div class="page">
+
+  <div class="flex-container">
+    <div class="desktop">
+      <div class="p-l-medium flex-aside">
+
+        <h3 class="icon" [ngClass]="(showHideGenres)?'up':''" (click)="onShowHideGenres()">Genre</h3>
+        <ul [style.display]="showHideGenres ? 'block' : 'none'">
+          <li *ngFor="let item of filterByGenres;">
+            <md-button-toggle checked item [name]="item.name" [value]="item.value" [id]="item?.value" (change)="onChange($event)">{{
+              item.name }}
+            </md-button-toggle>
+          </li>
+
+          <li class="text-capitalize underline">
+            <!--<md-button-toggle>View All</md-button-toggle>-->
+          </li>
+        </ul>
+        <h3 class="icon" [ngClass]="(showHideMoods)?'up':''" (click)="onShowHideMoods()">Mood</h3>
+        <ul [style.display]="showHideMoods ? 'block' : 'none'">
+          <li *ngFor="let item of filterByMoods;">
+            <md-button-toggle checked item [name]="item.name" [value]="item.value" [id]="item?.value" (change)="onChange($event)">{{
+              item.name }}
+            </md-button-toggle>
+          </li>
+          <li class="text-capitalize underline">
+            <!--<md-button-toggle>View All</md-button-toggle>-->
+          </li>
+
+        </ul>
+        <h3 class="icon" [ngClass]="(showHideElements)?'up':''" (click)="onShowHideElements()">Element</h3>
+        <ul [style.display]="showHideElements ? 'block' : 'none'">
+          <li *ngFor="let item of filterByElements;">
+            <md-button-toggle checked item [name]="item.name" [value]="item.value" [id]="item?.value" (change)="onChange($event)">{{
+              item.name }}
+            </md-button-toggle>
+          </li>
+          <li class="text-capitalize underline">
+            <!--<md-button-toggle>View All</md-button-toggle>-->
+          </li>
+
+        </ul>
+      </div>
+    </div>
+    <div class="flex-content m-b-large">
+      <section class="browse m-l-large m-r-large m-b-large">
+        <div class="mobile">
+          <md-input-container class="fr search">
+            <input mdInput placeholder="Search lyrics, tracks and artists... " [(ngModel)]='search' (ngModelChange)="setPage(1)">
+          </md-input-container>
+        </div>
+        <section class="desktop filters">
+          <strong class="fl uppercase font-medium m-b-medium">Filtering By:</strong>
+          <ul class="flist m-b-medium overflow font-medium m-t-a2">
+          <span *ngFor="let filter of filterBy">
+            <li class="cursor" (click)="onRemoveFilter($event, filter)">{{ filter.name }}<span
+              class="icon icon-x"></span></li>
+          </span>
+          </ul>
+
+
+        </section>
+        <section class="desktop dropdown-filters clear">
+
+          <div class="dropdown-holder fl">
+            <button class="btn btn-dropdown track-length" (click)="onToggleTrackLengthDD()">Track Length</button>
+            <div class="dropdown track-length lengthMenu" *ngIf="showTrackLengthdd">
+              <div class="fl block" (blur)="onHideTrackLengthDD($event)">
+
+                <p class="clear"><input type="text" [(ngModel)]="minCount"> - <input type="text" [(ngModel)]="maxCount">
+                  min</p>
+                <md-slider (change)="onTrackLengthChange($event)" [(ngModel)]="minCount" [invert]="false"
+                           [max]="maxCount" [min]="0" [step]=".5" [value]="0"></md-slider>
+                <md-slider (change)="onTrackLengthChange($event)" [(ngModel)]="maxCount" [invert]="false" [max]="14"
+                           [min]="0" [step]=".5" [value]="14"></md-slider>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="dropdown-holder fl">
+            <button class="btn btn-dropdown vocals" (click)="onToggleVocalsDD()">Vocals</button>
+            <div class="dropdown vocals vocalsMenu" *ngIf="showVocalsdd">
+              <div class="fl block" (blur)="onHideVocalsDD($event)">
+                <label *ngFor="let item of filterByVocals;">{{ item.name }}
+                  <input type="checkbox" [name]="item.name" [value]="item.value" [id]="item?.value" (click)="onChange($event)"
+                         class="browseFilterBtn">
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!--<button [mdMenuTriggerFor]="voice" class="btn btn-dropdown">Vocals</button>
+          <md-menu #voice="mdMenu" class="btn-filter-dropdown vocalMenu" id="vocalsFilterMenu">
+            <button md-menu-item *ngFor="let item of filterByVocals;" [name]="item.name" [value]="item.value[id]="item?.value"
+                    (click)="onChange($event)" class="browseFilterBtn">{{ item.name }}
+            </button>
+          </md-menu>-->
+
+
+          <div class="dropdown-holder fl">
+            <button class="btn btn-dropdown energy" (click)="onToggleEnergyDD()">Energy</button>
+            <div class="dropdown vocals vocalsMenu" *ngIf="showEnergydd">
+              <div class="fl block" (blur)="onHideEnergyDD($event)">
+                <label *ngFor="let item of filterByEnergy;">{{ item.name }}
+                  <input type="checkbox" [name]="item.name" [value]="item.value" [id]="item?.value" (click)="onChange($event)"
+                         class="browseFilterBtn">
+                </label>
+              </div>
+            </div>
+          </div>
+          <!--
+          <button [mdMenuTriggerFor]="energy" class="btn btn-dropdown" id="energyFilterMenu">Energy</button>
+          <md-menu #energy="mdMenu" class="btn-filter-dropdown energyMenu">
+            <button md-menu-item *ngFor="let item of filterByEnergy;" [name]="item.name" [value]="item.value[id]="item?.value"
+                    (click)="onChange($event)" class="browseFilterBtn">{{ item.name }}
+            </button>
+          </md-menu>-->
+
+
+          <md-checkbox class="font-medium font-grey-dark m-t-m2 m-r-small" name="Instrumentals Only" value="vocal_none"
+                       [id]="item?.value" (change)="onChange($event)">Instrumentals Only
+          </md-checkbox>
+          <!--<md-checkbox class="font-medium font-grey-lt m-t-m2 m-r-small" name="Staff Pick" value="staff_pick[id]="item?.value"
+                       (change)="onChange($event)">Staff Pick
+          </md-checkbox>
+          <md-checkbox class="font-medium font-grey-lt m-t-m2 m-r-small" name="Featured" value="feature[id]="item?.value"
+                       (change)="onChange($event)">Featured
+          </md-checkbox>-->
+
+          <!--<md-input-container class="fr">
+            <input mdInput placeholder="Type your filter" [(ngModel)]='search' (ngModelChange)="setPage(1)">
+          </md-input-container>-->
+
+        </section>
+
+
+        <div *ngIf="tracks === -1">
+          <div class="no-results">No tracks found.</div>
+        </div>
+        <span *ngIf="tracks !== -1">
+          <span *ngFor="let track of tracks">
+            <app-track
+              [track]="track"
+              [title]="track.title"
+              [artist]="track?.artist?.name"
+              [playtime_min]="track.playtime_min"
+              [playtime_sec]="track.playtime_sec"
+            ></app-track>
+          </span>
+        </span>
+
+      </section>
+      <div id="pagination-wrapper" align="center">
+        <div class="pagination clear m-t-medium" *ngIf="pager.pages && pager.pages.length">
+
+          <a class="fl page-prev p-lr-small cursor icon-back icon" (click)="setPage(pager.currentPage - 1)">Back</a>
+
+          <div class="page-list">
+            <div class="fl " *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+              <a (click)="setPage(page)" [ngClass]="{active:pager.currentPage === page}">{{page}}</a>
+            </div>
+          </div>
+
+          <a class="fl page-next m-l-medium cursor icon-next icon" (click)="setPage(pager.currentPage + 1)">Next</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

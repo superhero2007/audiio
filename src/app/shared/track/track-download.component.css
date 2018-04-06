@@ -1,0 +1,15 @@
+.track-thumb {
+  margin-top: 7px;
+}
+.track-info {
+  width:100px;
+}
+@media (max-width: 800px) {
+  .track-info {
+    width:100%;
+  }
+  .track span.track-title span.title,
+  .track span.track-title span.artist {
+    font-size:100%;
+  }
+}

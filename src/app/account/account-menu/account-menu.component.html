@@ -1,0 +1,11 @@
+<nav>
+  <ul class="account-menu flist">
+    <!--<li><a [routerLinkActive]="['is-active']" [routerLink]="['/account/music']">Music</a></li>-->
+    <li><a [routerLinkActive]="['is-active']" [routerLink]="['/account/licenses']">Licenses</a></li>
+    <!--<li><a [routerLinkActive]="['is-active']" [routerLink]="['/account/profile']">Profile</a></li>-->
+    <li><a [routerLinkActive]="['is-active']" [routerLink]="['/account/billing']">Billing Info</a></li>
+    <li><a [routerLinkActive]="['is-active']" [routerLink]="['/account/favorites']">Favorites</a></li>
+    <li><a (click)="onLogout()">Logout</a></li>
+
+  </ul>
+</nav>

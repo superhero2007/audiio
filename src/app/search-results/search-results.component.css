@@ -1,0 +1,75 @@
+:host > div{
+  position: absolute;
+  z-index: 20;
+  top: 80px;
+  width: 100%;
+  background-color:rgba(248,248,248,.95);
+  height:100%;
+  padding-top:20px;
+}
+
+.lyrics .title{
+  font-family: SourceSansPro-Semibold;
+  font-size: 16px;
+  color: #4A4A4A;
+}
+
+.lyrics .artist{
+  font-family: SourceSansPro-Regular;
+  font-size: 16px;
+  color: #4A4A4A;
+}
+
+.lyrics p{
+  font-family: SourceSansPro-Regular;
+  font-size: 14px;
+  color: #9B9B9B;
+}
+
+.lyrics md-toolbar {
+  background: #FFFFFF;
+  border: 1px solid #D8D8D8;
+  margin-bottom:10px;
+}
+
+.txt-lyrics {
+  font-size:14px;
+  color:#9B9B9B;
+}
+
+strong {
+  color:#FD3F92 !important;
+}
+
+.list-item {
+
+}
+.list-item .thumb-container{
+  width: 70px;
+  height: 70px;
+  padding: 5px;
+  border: 1px solid #D8D8D8;
+  background: #ffffff;
+  display: inline-block;
+
+}
+.list-item .thumb{
+  background-position: center;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.thumb img {
+  width: 70px;
+  height:70px;
+}
+.list-item .artist{
+  font-family: SourceSansPro-Semibold;
+  font-size: 16px;
+  color: #4A4A4A;
+}
+.list-item .count{
+  font-family: SourceSansPro-Regular;
+  font-size: 14px;
+  color: #4A4A4A;
+}

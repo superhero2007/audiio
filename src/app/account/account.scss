@@ -1,0 +1,43 @@
+
+/* ----------- iPhone 6 ----------- */
+@media (max-width: 800px) {
+  .flex-content {
+    margin-top:80px;
+  }
+  .m-t-large {
+    margin-top:100px;
+  }
+  md-card.medium {
+    width:auto;
+    padding:15px;
+    margin-left:10px;
+    margin-right:10px;
+  }
+  nav ul.account-menu li {
+    float:none;
+    display:block;
+  }
+  .hero-inner-container.account{
+    height:90px;
+
+    .hero-content{
+      left:0;
+      width:100%;
+      margin-left:0;
+
+      p, .thumb{
+        float:left;
+        margin-top:20px;
+        margin-left:20px;
+      }
+      .thumb {
+        height:20px;
+        width:20px;
+        margin-top:20px;
+      }
+      p {
+        margin-top:30px;
+      }
+    }
+  }
+}

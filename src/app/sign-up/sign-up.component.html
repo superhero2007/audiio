@@ -1,0 +1,39 @@
+<div class="dialog" >
+  <span class="m-r-medium m-t-medium fr icon no-text icon-close" (click)="onClose()">close</span>
+  <form class=" " [formGroup]="form"  novalidate (ngSubmit)="submitForm(form)" ><!-- (ngSubmit)="submitForm(form.value)" -->
+    <div class="headline">
+      <h1 class="m-b-medium">{{headline}}</h1>
+      <p>Get access to full length songs, temp track  downloads, 24/7 support and more with a free AUDIIO account.</p>
+    </div>
+    <div class="body">
+
+      {{error}}
+
+      <table class="" cellspacing="0">
+        <tr>
+          <td >
+            <md-input-container ><input mdInput formControlName="fname" placeholder="First Name" > </md-input-container>
+          </td>
+          <td>
+            <md-input-container><input mdInput formControlName="lname" placeholder="Last Name"></md-input-container>
+          </td>
+        </tr>
+      </table>
+      <table class="" cellspacing="0">
+        <tr>
+          <td>
+            <md-input-container><input mdInput formControlName="email" type="email" placeholder="Email"></md-input-container>
+          </td>
+          <td>
+            <md-input-container><input mdInput formControlName="password" type="password" placeholder="Password"> </md-input-container>
+          </td>
+        </tr>
+      </table>
+      <md-checkbox formControlName="remember" class=" m-b-large f-normal">Remember me!</md-checkbox>
+      <button md-button class="center clear btn btn-lg btn-primary btn-block btn-signin overflow" onclick="return gtag_report_conversion()">
+        Sign Up
+      </button>
+    </div>
+  </form>
+  <p class="sign-up">If you already have an account <a class="txt-secondary" (click)="onLogin()">login</a></p>
+</div>

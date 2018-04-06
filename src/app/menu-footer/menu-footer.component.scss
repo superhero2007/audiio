@@ -1,0 +1,92 @@
+:host {
+  /*position: fixed;*/
+  /*bottom: 70px;*/
+  /*bottom:0;*/
+  width: 100%;
+}
+:host.show-player {
+  /*bottom:70px;*/
+}
+footer{
+  /*padding-top:140px;*/
+  clear:both;
+}
+.footer-logo {
+  width: 80px;
+  height: 40px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  margin-left: -40px;
+  font-family: 'SlateStd-Medium';
+  font-size: 26px;
+  letter-spacing: 0.11pt;
+  color: white;
+}
+
+footer section.center{
+  width:127px;
+  height:50px;
+}
+
+footer section.slogan {
+  margin-bottom:100px;
+}
+
+footer a {
+  text-decoration:none;
+  font-family: MuseoSans_300;
+}
+
+footer .footer-menu {
+  border-top-style: solid;
+  border-top-width:1px;
+  padding-right:6em;
+  font-family: MuseoSans_300;
+}
+
+button {
+  margin-right: 0.1em;
+}
+
+
+
+/* ----------- iPhone 6 ----------- */
+@media (max-width: 800px) {
+  footer{
+    padding:20px 0px;
+    margin-top:0px;
+
+    .footer-menu {
+      border:none;
+      overflow:hidden;
+
+      p {
+        margin-top:10px;
+        margin-bottom:10px;
+        font-size: 130%;
+        text-align: left;
+        margin-bottom: 20px;
+        float: none;
+      }
+    }
+  }
+  .footer-logo {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: auto;
+    bottom: auto;
+    margin: 10px 0;
+
+  }
+  footer .footer-menu {
+    padding-left:10px;
+    padding-left:10px;
+  }
+  .footer-menu button{
+    display:block;
+    font-size:150%;
+    padding:10px 0px;
+  }
+}

@@ -1,0 +1,282 @@
+<div [scrollSpyIndex]="{id: 'home', selector: 'anchor', topMargin: '-200px'}">
+  <div id="backgroundContainer">
+    <video autoplay loop class="desktop">
+      <source src="https://embedwistia-a.akamaihd.net/deliveries/ee70c51d66d3400b81d9fcaeee8072550e51078a/file.mp4" type="video/mp4">
+    </video>
+    <span class="mobile image" style="background-image:url('/assets/image/mobileimage.png'); background-size: 100% 100%;" [style.height.px]="slideshowHeightFull"></span>
+  </div>
+  <div class="homeFooter">
+    <div>
+      <p class="rotating">
+      </p>
+      <p class="sliding-texts">
+        <span class="slide1">Hello</span>
+        <span class="slide2">Bonjour</span>
+        <span class="slide3">Hola</span>
+      </p>
+    </div>
+    <div class="footerText desktop">
+      <a href="mailto:hello@audiio.com">hello@audiio.com</a>
+      <p>917.740.9572</p>
+      <p>
+        <a href="https://www.facebook.com/AudiioLicensing/">F</a>
+        <a href="https://www.instagram.com/audiiolicensing/">IG</a>
+        <a href="https://twitter.com/audiiolicensing">Tw</a>
+      </p>
+    </div>
+  </div>
+  <h1 id="hello" class="anchor">HELLO</h1>
+  <div id="section1" class="">
+    <div class="slideshow" [style.height.px]="slideshowHeightFull" >
+      <ul>
+        <li class="hello">
+          <!--<span class="desktop"><span class="mask"></span></span>-->
+
+          <!--<video class="desktop image"  id="video" crossorigin="anonymous"
+                 preload="auto" type="video/mp4" poster="https://d3rtks05ujgkhe.cloudfront.net/assets/image/hello.jpg" loop="loop" autoplay loop>
+            <source src="https://bodie-bills.wistia.com/medias/2e1n91muv3?wvideo=2e1n91muv3" type="video/mp4">
+          </video>-->
+          <!--<iframe class="" id="video"
+                  src="//fast.wistia.net/embed/iframe/2e1n91muv3?videoFoam=false&autoPlay=true&wmode=transparent"
+                  loop="true" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed"
+                  name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen
+                  width="100%" height="100%"
+                  background="white"
+                  wmode="transparent"
+                  style="background-color:#ffffff;
+          "></iframe>-->
+          <!--<span class="image" style="background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/home-slideshow-image-1.jpg');"></span>-->
+
+          <div class="content">
+            <h2 class="center m-t-medium">Global music licensing and custom scores.</h2>
+            <!--<div class="w-full center-text" >
+              <button md-button class="btn btn-primary btn-grey center m-t-medium m-lr-medium  inline-block" [routerLink]="['/browse']">Browse Catalog</button>
+              <a md-button class="inline-block btn btn-primary btn-grey center m-t-medium m-lr-medium"  [routerLink]="['/roster']">View Roster</a>
+              <a md-button class="desktop-inline btn btn-primary btn-grey center m-t-medium m-lr-medium"  href="/#artist">New Artists / Releases</a>
+
+            </div>-->
+            <div>
+              <div class='listenanimation' [routerLink]="['/browse']">Listen Now</div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+  <h1 id="artist" class="anchor">Artist</h1>
+  <!-- <div id="section2" class="desktop" [style.height.px]="slideshowHeightFull" scrollSpyElement="slideshow">
+    <div class="menu-secondary">
+      <ul>
+        <li class="active"><a class="font-medium" (click)="goToSlide('artist-slide-1', $event)">Shake Shake Go </a></li>
+        <li><a class="font-medium" (click)="goToSlide('artist-slide-2', $event)">Old Wave </a></li>
+        <li><a class="font-medium" (click)="goToSlide('artist-slide-3', $event)">Emily Vaughn </a></li>
+        <li><a class="font-medium" (click)="goToSlide('artist-slide-4', $event)">Jones Island </a></li>
+        <li class="last"><a class="font-medium" (click)="goToSlide('artist-slide-5', $event)">Goldmyth </a></li>
+        <button class="btn btn-text font-medium" [routerLink]="['/browse']">Browse All Music</button>
+      </ul>
+    </div>
+    <h1 class="center p-t-large">New Artists / Releases</h1>
+
+    <div id="artist-slide-1" class="artists-slide" [style.backgroundImage]="'url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/home-slide-shake-shake-go.jpg)'" >
+      <article class="center">
+        <div class="content-center" [style.marginTop.px]="slideshowHeightFull/2-82" >
+        <h2>Shake Shake Go </h2>
+        <p>Stream the debut album from Britain’s<br/> highly acclaimed pop sensation</p>
+        <a class="btn no-text icon icon-track-now-white" [routerLink]="['/artist/shake-shake-go']">Listen Now</a>
+
+      </div>
+      </article>
+    </div>
+    <div id="artist-slide-2" class="artists-slide" [style.backgroundImage]="'url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/home-slide-oldwave.jpg)'">
+      <article class="center">
+        <div class="content-center" [style.marginTop.px]="slideshowHeightFull/2-82" >
+          <h2>Old Wave </h2>
+          <p>Feel-good indie EP<br/> with California charm</p>
+          <a class="btn no-text icon icon-track-now-white" [routerLink]="['/artist/old-wave']">Listen Now</a>
+        </div>
+      </article>
+    </div>
+    <div id="artist-slide-3" class="artists-slide" [style.backgroundImage]="'url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/home-slide-emily-vaughn.jpg)'">
+      <article class="center">
+        <div class="content-center" [style.marginTop.px]="slideshowHeightFull/2-82" >
+          <h2>Emily Vaughn </h2>
+          <p>Discover Emily’s radiating vocals,<br/> extensive range and dreamy  tones</p>
+          <a class="btn no-text icon icon-track-now-white" [routerLink]="['/artist/emily-vaughn']">Listen Now</a>
+        </div>
+      </article>
+    </div>
+    <div id="artist-slide-4" class="artists-slide" [style.backgroundImage]="'url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/home-slide-johns-island.jpg)'">
+      <article class="center">
+        <div class="content-center" [style.marginTop.px]="slideshowHeightFull/2-82" >
+          <h2>Jones Island </h2>
+          <p>A catalog of light hearted,<br/> cinematic compositions</p>
+          <a class="btn no-text icon icon-track-now-white" [routerLink]="['/artist/jones-island']">Listen Now</a>
+        </div>
+      </article>
+    </div>
+    <div id="artist-slide-5" class="artists-slide" [style.backgroundImage]="'url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/home-slide-goldmyth.jpg)'">
+      <article class="center">
+        <div class="content-center" [style.marginTop.px]="slideshowHeightFull/2-82" >
+          <h2>Goldmyth </h2>
+          <p>Grammy-nominated producer meets<br/> indie-pop harpist in this debut EP</p>
+          <a class="btn no-text icon icon-track-now-white" [routerLink]="['/artist/goldmyth']">Listen Now</a>
+        </div>
+      </article>
+    </div>
+  </div> -->
+  <div id="section2" class="desktop" [style.height.px]="slideshowHeightFull" scrollSpyElement="slideshow">
+    <div class="menu-secondary">
+      <ul>
+        <li class="pro1 active">
+          <a class="font-large" (click)="goToSlide('artist-slide-1', $event)">
+            <div class="rightText">
+              <p class="sliding-text work-number">
+                <span class="slide">01</span>
+                <span class="visible">01</span>
+              </p>
+            </div>
+            <div class="leftText">
+              <h3 class="sliding-text work-title">
+                <span class="slide">Shake Shake Go</span>
+                <span class="visible">Shake Shake Go</span>
+              </h3>
+              <div class="work-separation">
+              </div>
+              <p class="work-subtitle">British Folk-Rock Anthems</p>
+            </div>
+          </a>
+        </li>
+        <li class="pro2">
+          <a class="font-large" (click)="goToSlide('artist-slide-2', $event)">
+            <div class="rightText">
+              <p class="sliding-text work-number">
+                <span class="slide">02</span>
+                <span class="visible">02</span>
+              </p>
+            </div>
+            <div class="leftText">
+              <h3 class="sliding-text work-title">
+                <span class="slide">Jones Island</span>
+                <span class="visible">Jones Island</span>
+              </h3>
+              <div class="work-separation">
+              </div>
+              <p class="work-subtitle">Lighthearted, Feel-Good Scores</p>
+            </div>
+          </a>
+        </li>
+        <li class="pro3">
+          <a class="font-large" (click)="goToSlide('artist-slide-3', $event)">
+            <div class="rightText">
+              <p class="sliding-text work-number">
+                <span class="slide">03</span>
+                <span class="visible">03</span>
+              </p>
+            </div>
+            <div class="leftText">
+              <h3 class="sliding-text work-title">
+                <span class="slide">Goldmyth</span>
+                <span class="visible">Goldmyth</span>
+              </h3>
+              <div class="work-separation">
+              </div>
+              <p class="work-subtitle">Critically Acclaimed Debut EP</p>
+            </div>
+          </a>
+        </li>
+        <button class="btn btn-text font-medium" [routerLink]="['/playlists/new-music']">
+          <span class="buttonText">All New Music</span>
+          <span class="btn no-text icon icon-track-now-white">Listen Now</span>
+        </button>
+      </ul>
+    </div>
+    <div class="article-container">
+      <div id="artist-slide-1" class="artists-slide" [style.backgroundImage]="'url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/home-slide-shake-shake-go.jpg)'" [routerLink]="['/artist/shake-shake-go']">
+        <article class="center">
+          <div class="content-center">
+          <h2>Shake Shake Go</h2>
+          <a class="btn no-text icon icon-track-now-white">Listen Now</a>
+          <p>Listen now</p>
+        </div>
+        </article>
+      </div>
+      <div id="artist-slide-2" class="artists-slide" [style.backgroundImage]="'url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/home-slide-johns-island.jpg)'" [routerLink]="['/artist/jones-island']">
+        <article class="center">
+          <div class="content-center">
+            <h2>Jones Island</h2>
+            <a class="btn no-text icon icon-track-now-white">Listen Now</a>
+            <p>Listen now</p>
+          </div>
+        </article>
+      </div>
+      <div id="artist-slide-3" class="artists-slide" [style.backgroundImage]="'url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/home-slide-goldmyth.jpg)'" [routerLink]="['/artist/goldmyth']">
+        <article class="center">
+          <div class="content-center">
+            <h2>Goldmyth</h2>
+            <a class="btn no-text icon icon-track-now-white">Listen Now</a>
+            <p>Listen now</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+
+
+  <h1 id="playlist" class="anchor">Playlist</h1>
+  <!--
+  <div id="section3" class="desktop" [style.height.px]="slideshowHeightFull">
+    <div class="middle center">
+      <h1>Featured Playlist:</h1>
+      <h1>Mood Boost</h1>
+      <button md-button class="btn btn-secondary btn-white" [routerLink]="['/playlists/mood-boost']">Listen Now</button>
+    </div>
+    <div class="center bottom m-t-xlarge block font-small clear">
+      <a class="btn-white btn-text font-small underline" [routerLink]="['/playlists']">View All Playlists</a>
+    </div>
+
+  </div>-->
+  <div id="section3" class="desktop" [style.height.px]="slideshowHeightFull">
+    <div class="content">
+      <div class="leftPanel fl">
+        <div>
+          <p class="leftText">Licensing & creating music for filmmakers around the world.</p>
+        </div>
+        <div class="slideshow-logos">
+          <div>
+            <ul>
+              <li class="wb"></li>
+              <li class="levis"></li>
+              <li class="netflix"></li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li class="audi"></li>
+              <li class="nbc"></li>
+              <li class="hulu"></li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li class="nike"></li>
+              <li class="yeti"></li>
+              <li class="adidas"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="rightPanel fr">
+        <div class="rightmovie">
+          <iframe src="//player.vimeo.com/video/71374620?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;color=e6ae9e" width="500" height="300" frameborder="0"></iframe>
+          <!--<span class="btn no-text icon icon-track-now-white"></span>-->
+          <span class="browse" [routerLink]="['/browse']">Browse Catalog</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+</div>

@@ -1,0 +1,61 @@
+<div class="contactContainer">
+  <div id="contact-banner" class="desktop" [style.height.px]="slideshowHeight">
+    <div class="headline">
+      <h1>How can we help?</h1>
+      <h2>Our support staff loves two things – craft coffee & emails. There’s a good chance we’re consuming them both at this very moment.</h2>
+    </div>
+  </div>
+  <div id="contact-banner-mobile" class="mobile">
+    <div class="headline">
+      <h1>How can we help?</h1>
+      <h2>Our support staff loves two things – craft coffee & emails. There’s a good chance we’re consuming them both at this very moment.</h2>
+    </div>
+  </div>
+  <div class="form-container">
+      <div *ngIf="isSent">
+
+        <h1 class="center">Success! We have received your message</h1>
+
+        <section class="blurb-center">
+          <h2>We'll respond to your message shortly. In the meantime...
+            <div class="border"></div>
+          </h2>
+          <button md-button class="clear btn btn-primary center m-t-medium" [routerLink]="['/browse']">Browse Our Music</button>
+        </section>
+
+      </div>
+      <form *ngIf="!isSent" class="form-signin " [formGroup]="form" (ngSubmit)="submitForm(form)">
+        <div class="form-row">
+          <md-select formControlName="interest" placeholder="I am interested in...">
+            <md-option *ngFor="let interest of interests" [value]="interest">{{ interest.title }}</md-option>
+          </md-select>
+        </div>
+
+        <div class="form-row">
+          <md-input-container class="half-width">
+        <input mdInput formControlName="firstName" type="text" placeholder="{{firstName.placeholder}}">
+      </md-input-container>
+      <md-input-container class="half-width">
+        <input mdInput formControlName="lastName" type="text" placeholder="{{lastName.placeholder}}">
+      </md-input-container>
+        </div>
+        <div class="form-row">
+          <md-input-container class="half-width">
+        <input mdInput formControlName="email" type="text" placeholder="{{email.placeholder}}">
+      </md-input-container>
+      <md-input-container class="half-width">
+        <input mdInput formControlName="phone" type="text" placeholder="{{phone.placeholder}}">
+      </md-input-container>
+        </div>
+      <div class="form-row m-t-xlarge">
+          <md-input-container>
+        <input mdInput formControlName="message" type="text" placeholder="{{message.placeholder}}">
+      </md-input-container>
+        </div>
+
+
+      <button md-button class="clear btn btn-lg btn-primary btn-block btn-signin" type="submit">Send</button>
+        <span id="call-us"><a class="btn-text txt-tertiary" href="mailto:hello@audiio.com">hello@audiio.com</a> | <a class="btn-text txt-tertiary" href="https://www.facebook.com/AUDIIOLICENSING/" target="_blank">Connect on Facebook</a></span>
+    </form>
+  </div>
+</div>

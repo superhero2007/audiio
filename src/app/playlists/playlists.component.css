@@ -1,0 +1,67 @@
+.playlistContainer {
+  margin-top: 90px;
+}
+.card.tint-content .thumb {
+  padding: 0;
+}
+
+.thumb {
+  padding: 0;
+}
+
+.thumb img {
+  display: block;
+  width: 260px;
+  height: 260px;
+}
+
+/* ----------- iPhone 6 ----------- */
+@media (max-width: 800px) {
+
+  .card.tint-content {
+    width: 120px;
+    height: 120px;
+
+      h3 {
+      }
+    }
+
+  .card.tint-content .tint {
+    width: 120px;
+    height: 120px;
+    top:0;
+    left:0;
+  }
+
+  .card.tint-content h3 {
+    font-size: 110%;
+    margin-top: 20px;
+  }
+
+  .card.tint-content .thumb,
+  .card.tint-content .thumb img,
+  .thumb img {
+    width: 140px;
+    height: 140px;
+    top:0;
+    left:0;
+  }
+
+
+
+}
+
+.playlist-thumbs{
+  display: block;
+  height: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.playlist-thumbs .card {
+  display: inline-block;
+  position: relative;
+  margin: 0 5px 20px 5px;
+  max-width: 320px;
+}

@@ -1,0 +1,54 @@
+<div class="hero-inner-container account">
+  <div class="hero-content">
+    <div class="thumb" ></div><!-- style="background-image:url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/thumb-account-image.jpg);" -->
+    <p>{{user.first_name}} {{user.last_name}}</p>
+  </div>
+
+  <app-account-menu></app-account-menu>
+
+  <div class="hero-inner-tint dark"></div>
+</div>
+
+<md-card class="medium m-b-large"><!-- [@formBounce]>-->
+  <form class="example-form" [formGroup]="form" (ngSubmit)="submitForm()">
+
+    <h2 class="border-grey-bottom m-b-medium">Billing Info</h2>
+
+
+
+    <table class="" cellspacing="0">
+      <tr>
+        <td><md-input-container><input formControlName="first_name"  mdInput placeholder="First Name"></md-input-container></td>
+        <td><md-input-container><input formControlName="last_name"  mdInput placeholder="Last Name"></md-input-container></td>
+      </tr>
+    </table>
+
+    <md-input-container class=""> <input formControlName="email" mdInput  placeholder="Email"></md-input-container>
+    <md-input-container class=""> <input formControlName="address" mdInput placeholder="Address"></md-input-container>
+
+
+    <table cellspacing="0">
+      <tr>
+        <td><md-input-container class="">
+          <input formControlName="city" mdInput placeholder="City">
+        </md-input-container></td>
+        <td><md-input-container class="">
+          <input formControlName="state" mdInput placeholder="State">
+        </md-input-container></td>
+        <td><md-input-container class="">
+          <input formControlName="postal_code" mdInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
+          <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
+        </md-input-container></td>
+      </tr>
+    </table>
+
+  </form>
+
+  <div class="center m-b-large overflow">
+    <button md-button class="fl m-r-medium btn btn-lg btn-primary btn-block" type="submit" (click)="submitForm()">Update</button>
+    <a class="fl links f-normal font-medium p-tb-small m-l-large" (click)="onCancel()">Cancel</a>
+  </div>
+
+
+</md-card>
+

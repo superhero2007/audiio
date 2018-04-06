@@ -1,0 +1,129 @@
+:host {
+  z-index: 0;
+  position: relative;
+  display: block;
+  transition: all .25s ease-in-out;
+
+}
+/*:host:hover {
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,.3);
+  z-index:1;
+  background-color:#eeeeee;
+}*/
+.track-thumb {
+  height:55px;
+  display:inline-block;
+  margin-left:5px;
+  background-color: #ffffff;
+}
+.track-thumb img {
+  width:55px;
+  height:55px;
+}
+.fade {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+}
+.fade:hover {
+  opacity: 0.5;
+}
+
+.track-title {
+  width:440px;
+  margin-right:20px;
+}
+
+md-toolbar {
+  border:1px solid #D8D8D8;
+  position: relative;
+  padding: 5px;
+  border-bottom:none;
+  padding-right:15px;
+}
+
+
+.artist {
+  font-family: SourceSansPro,sans-serif;
+  font-size: 14px;
+  color: #4A4A4A;
+  text-transform: capitalize;
+  font-weight: normal;
+}
+
+.title {
+  font-family: SourceSansPro-Semibold,sans-serif;
+  font-size: 16px;
+  color: #4A4A4A;
+  font-weight:bold;
+}
+
+.time, .time_played, .time_remaining {
+  font-family: SourceSansPro-Regular;
+  font-size: 16px;
+  color: #4A4A4A;
+  padding-top:0px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+.play-time-volume .time,.play-time-volume  .time_played,.play-time-volume  .time_remaining {
+  padding-top:13px;
+}
+
+.time:hover, .time_played:hover, .time_remaining:hover {
+  color:#FD3F92;
+}
+.time {
+  width: 70px;
+  text-align: right;
+}
+
+.vocal{
+  width:50px;
+}
+.staff-pick, .instrumental{
+  width:50px;
+  margin:0 10px;
+}
+.wave {
+  display:inline-block;
+  margin-right: 50px;
+  top:0;
+  position: relative;
+}
+
+.wav wave {
+  overflow-x:hidden !important;
+}
+
+.wave canvas {
+  height: 40px !important;
+  top: 2px;
+}
+
+.icon-fav {
+  width:40px;
+}
+
+.btn.btn-primary {
+  border-radius: 7px;
+}
+
+.btn-wide {
+  width:200px;
+}
+
+.dropdown-horizontal {
+  position: relative;
+  background: white;
+  padding-right: 10px;
+}
+.dropdown-horizontal .icon-close {
+  position: relative;
+  left: 0px;
+}
+.track-actions {
+  position: relative;
+  left:-5px;
+}

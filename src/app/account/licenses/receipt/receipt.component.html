@@ -1,0 +1,152 @@
+<table align="center" cellpadding="0" cellspacing="0" class="container-for-gmail-android" width="100%" style="width:100%;">
+  <tr>
+    <td align="center" valign="top" width="100%" style="" class="content-padding">
+
+        <table cellspacing="0" cellpadding="0" width="600" class="w320">
+          <tr>
+            <td class="header-lg">
+              Thank you for your purchase!
+            </td>
+          </tr>
+          <tr>
+            <td class="free-text">
+            </td>
+          </tr>
+          <tr>
+            <td class="w320">
+              <table cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td class="mini-container-left">
+                    <table cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td class="mini-block-padding">
+                          <table cellspacing="0" cellpadding="0" width="100%" style="border-collapse:separate !important;">
+                            <tr>
+                              <td class="mini-block">
+                                <span class="header-sm">Bill To</span><br />
+                                {{user.first_name}} {{user.last_name}} <br />
+                                {{user.address}} <br />
+                                {{user.city}}, {{user.state}}<br />
+                                USA
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="mini-container-right">
+                    <table cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td class="mini-block-padding">
+                          <table cellspacing="0" cellpadding="0" width="100%" style="border-collapse:separate !important;">
+                            <tr>
+                              <td class="mini-block">
+                                <span class="header-sm">Date Ordered</span><br />
+                                {{receipt.purchase_date |  date:'MM/dd/yyyy'}} <br />
+                                <br />
+                                <span class="header-sm">Order</span> <br />
+                                {{receipt.order_number}}
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" width="100%" style="background-color: #ffffff;  border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5;">
+
+        <table cellpadding="0" cellspacing="0" width="600" class="w320">
+          <tr>
+            <td class="item-table">
+              <table cellspacing="0" cellpadding="0" width="100%">
+
+
+                <!--<tr>
+                  <td class="title-dark" width="300">
+                    Item
+                  </td>
+                  <td class="title-dark" width="97">
+                    Total
+                  </td>
+                </tr>-->
+
+                <tr>
+                  <td class="title-dark" width="300">
+                    <table cellspacing="0" cellpadding="0" width="100%">
+                      <tr>
+                        <td class="mobile-hide-img">Track</td>
+                        <td class="product">Title and Artists</td>
+                        <td class="product">Project Description</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="title-dark" width="97">
+                    Total
+                  </td>
+                </tr>
+
+
+
+                <tr>
+                  <td class="item-col item">
+                    <table cellspacing="0" cellpadding="0" width="100%">
+                      <tr>
+                        <td class="mobile-hide-img">
+                          <a href=""><img width="110" height="92" src="{{track_thumb}}" alt="item1"></a>
+                        </td>
+
+                        <td class="product">
+                            <span style="color: #4d4d4d; font-weight:bold;">
+                            <a href="">{{track.title}}</a></span> <br />
+                          <a href="$link_track_artist">{{track.artist['name']}}</a>
+                        </td>
+
+                        <td class="product">
+                          {{receipt.project}}<br/>
+                          {{receipt.distribution}}
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="item-col">
+                    {{receipt.amount/100 | currency:'USD':true:'1.2-2'}}
+                  </td>
+                </tr>
+
+
+
+                <tr>
+                  <td class="item-col item mobile-row-padding"></td>
+                  <td class="item-col price"></td>
+                </tr>
+
+
+                <tr>
+
+                  <td class="item-col quantity" style="text-align:right; padding-right: 10px; border-top: 1px solid #cccccc;">
+                    <span class="total-space">Subtotal</span> <br />
+                    <span class="total-space" style="font-weight: bold; color: #4d4d4d">Total</span>
+                  </td>
+                  <td class="item-col price" style="text-align: left; border-top: 1px solid #cccccc;">
+                    <span class="total-space">{{receipt.amount/100 | currency:'USD':true:'1.2-2'}}</span> <br />
+                    <span class="total-space" style="font-weight:bold; color: #4d4d4d">{{receipt.amount/100 | currency:'USD':true:'1.2-2'}}</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+    </td>
+  </tr>
+</table>

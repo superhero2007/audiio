@@ -1,0 +1,46 @@
+<div class="hero-inner-container account">
+  <div class="hero-content">
+    <div class="thumb" ></div><!-- style="background-image:url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/thumb-account-image.jpg);" -->
+    <p>{{user.first_name}} {{user.last_name}}</p>
+
+  </div>
+  <app-account-menu></app-account-menu>
+  <div class="hero-inner-tint dark"></div>
+</div>
+
+<div class="flex-content m-b-large">
+  <section class="browse m-l-large m-r-large m-b-large ">
+    <h4 class="m-tb-medium m-0" *ngIf="tracks?.length >= 1">Licenses</h4>
+
+    <div *ngIf="tracks?.length <= 0" class="m-t-large">
+      <div class="content center">
+        <h2 class=" m-tb-large">It looks like you haven’t made a purchase yet</h2>
+        <button md-button class="clear btn btn-primary center m-t-medium" [routerLink]="['/browse']">Browse Our Music</button>
+      </div>
+    </div>
+    <span *ngIf="tracks?.length >= 1">
+
+
+        <md-toolbar style="width:100%" color="secondary" class="desktop" >
+              <span class="sm-caps">Track Name</span>
+              <span class="sm-caps m-l-medium">Order Number</span>
+              <span class="sm-caps m-r-small">Purchase Date</span>
+              <span class="sm-caps m-r-large">Receipt</span>
+              <span class="sm-caps m-r-medium">Downloads</span>
+        </md-toolbar>
+
+          <span *ngFor="let track of tracks">
+            <app-track-download
+              [track]="track"
+              [title]="track.title"
+              [order_number]="track.order_number"
+              [purchase_date]="track.purchase_date"
+              [expiration_date]="expiration_date"
+              [contract]="contract"
+              [download]="download"
+            ></app-track-download>
+          </span>
+        </span>
+
+  </section>
+</div>

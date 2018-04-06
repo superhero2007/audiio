@@ -1,0 +1,23 @@
+<article class="cart content">
+  <h1>Cart</h1>
+
+  <div *ngIf="tracks.length <= 0">
+    <div class="no-results m-b-large">Please add a track to your cart.</div>
+    <button [routerLink]="['/browse']" md-button class="clear btn btn-lg btn-primary btn-block btn-signin" type="submit" >Browse</button>
+
+  </div>
+  <span *ngIf="tracks.length > 0">
+          <span *ngFor="let track of tracks">
+            <app-track
+              [track]="track"
+              [title]="track.title"
+              [artist]="track?.artist.name"
+              [playtime_min]="track.playtime_min"
+              [playtime_sec]="track.playtime_sec"
+            ></app-track>
+          </span>
+    <div class="m-tb-large">
+    <button [routerLink]="['/checkout']" md-button class=" clear btn btn-lg btn-primary btn-block btn-signin" type="submit" >Checkout</button>
+</div>
+        </span>
+</article>

@@ -1,0 +1,79 @@
+<div class="menu-main p-tb-medium p-l-small p-r-large" >
+  <button class="fr btn icon-menu icon m-l-medium cursor mobile" (click)="sidenav.open()">Open</button>
+  <div class="fl logo cursor desktop" [routerLink]="['/']">audiio</div>
+  <div class="fl cursor icon-mobile-logo mobile no-text" [routerLink]="['/']">audiio</div>
+
+  <!--<div class="main-search fl border-grey-lt color-primary">
+
+
+    <div md-icon-button [mdMenuTriggerFor]="menu" class="main-search-dropdown fl cursor">
+      <div class="selected font-medium icon uppercase p-tb-small p-l-medium p-r-large">All Categories</div>
+      <md-menu #menu="mdMenu">
+        <button md-menu-item> <span>Playlist</span> </button>
+        <button md-menu-item> <span>Lyrics</span> </button>
+        <button md-menu-item> <span>Artist</span> </button>
+        <button md-menu-item> <span>All Categories</span> </button>
+      </md-menu>
+    </div>
+
+    <<div class="dropdown-holder main-search-dropdown fl cursor">
+      <button class="btn btn-dropdown cursor" (click)="onToggleCategoriesDD()">{{currentCategory.name}}</button>
+      <div class="dropdown vocals" *ngIf="showCategoriesdd">
+        <div class="fl block" (blur)="onHideCategoriesDD($event)">
+          <label *ngFor="let item of filterByCategories;">{{ item.name }}
+            <input type="checkbox" [name]="item.name" [value]="item.value" (click)="onChange($event)" class="browseFilterBtn">
+          </label>
+        </div>
+      </div>
+    </div>
+
+
+
+    <<div class="main-search-input fl ">
+      <input [(ngModel)]='searchTerm' (ngModelChange)="searchUpdate()" type="text" class="color-primary p-tb-small p-lr-medium font-medium"  placeholder="Search lyrics, playlists and artists...">
+      <input class="icon cursor" type="submit" >
+      <span *ngIf="searchTerm?.length >= 2" class="icon icon-close no-text" (click)="searchClear()">clear</span>
+    </div>
+  </div>-->
+
+  <div class="main-toolbar fr">
+    <div class="subitem menu-bar">
+      <a class="fl links f-normal font-medium menuItem graySeparator browseLink" [routerLink]="['/browse']">Browse Catalog</a>
+      <a class="fl links f-normal font-medium menuItem graySeparator newMusic" href="#section2">New Music</a>
+      <!--<a class="fl links f-normal font-medium separator menuItem" [routerLink]="['/genres']">Genres</a>-->
+      <a class="fl links f-normal font-medium menuItem graySeparator playList" [routerLink]="['/playlists']">Playlists</a>
+      <a class="fl links f-normal font-medium menuItem contact" [routerLink]="['/contact']">Contact</a>
+    </div>
+    <div *ngIf="!isLoggedIn" class="subitem">
+      <a class="fl links f-normal font-medium separator loginButton" (click)="onSignUp()">Sign Up</a><!-- [routerLink]="['/sign-up']" -->
+      <a class="fl links f-normal font-medium loginButton" (click)="onLogin()">Login</a><!-- [routerLink]="['/login']" -->
+      <!--<a class="fl links f-normal font-medium icon btn-cart txt-hide p-small" [routerLink]="['/cart']">Cart <span *ngIf="cartItems > 0" class="notification">{{cartItems}}</span></a>-->
+    </div>
+    <div *ngIf="isLoggedIn" class="subitem">
+      <a class="fl links f-normal font-medium icon icon-profile txt-hide p-small" [routerLink]="['/account/profile']">Profile</a>
+      <span class="favorites">
+        <a class="fl links f-normal font-medium icon icon-account-fav txt-hide p-small" [routerLink]="['/account/favorites']">Favorites </a>
+        <span class="notification">{{countFavs}}</span>
+      </span>
+      <!--<a class="fl links f-normal font-medium icon btn-cart txt-hide p-small" [routerLink]="['/cart']">Cart</a>-->
+    </div>
+  </div>
+
+
+</div>
+
+
+<md-sidenav #sidenav class="menu-main-flyout p-r-large overflow">
+  <div class="p-tb-medium p-lr-medium overflow m-l-small" (click)="sidenav.close()">
+    <button class="fl btn icon icon-menu-close cursor" >Close</button>
+    <div class="fl logo logo-light "  [routerLink]="['/']">Audiio</div>
+  </div>
+  <div class="p-lr-medium bold" (click)="sidenav.close()">
+    <a [routerLinkActive]="['is-active']" [routerLink]="['/about']">About</a>
+    <a [routerLinkActive]="['is-active']" [routerLink]="['/browse']">Browse</a>
+    <a [routerLinkActive]="['is-active']" [routerLink]="['/roster']">Roster</a>
+    <!--<a [routerLinkActive]="['is-active']" [routerLink]="['/genres']">Genres</a>-->
+    <a [routerLinkActive]="['is-active']" [routerLink]="['/playlists']">Playlists</a>
+    <a [routerLinkActive]="['is-active']" [routerLink]="['/contact']">Contact</a>
+  </div>
+</md-sidenav>

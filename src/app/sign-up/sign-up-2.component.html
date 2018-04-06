@@ -1,0 +1,11 @@
+<div>
+  <form class="form-signin " [formGroup]="form" (ngSubmit)="submitForm(form.value)">
+    <h1 class="m-b-medium">Sign up for free access <span class="fr links f-normal font-medium bold" >Step 2 of 2</span></h1>
+
+    <md-input-container><input mdInput formControlName="company_name" type="text" placeholder="Company Category"> </md-input-container>
+    <md-input-container><input mdInput formControlName="project_types" type="text" placeholder="Project Categories"> </md-input-container>
+
+
+    <button md-button class="fr clear btn btn-lg btn-primary btn-block btn-signin overflow" type="submit">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,309 @@
+button, .logo, .icon {
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border:none;
+  background-color: transparent;
+  background-size: 50%;
+}
+.no-text {
+  text-indent:-9999px;
+  display: inline-block;
+}
+.icon-mobile-logo {
+  background-image: url(/assets/image/A-black.png);
+  width: 40px;
+  height: 40px;
+  background-size: 40px;
+  margin-left: 25px;
+  background-repeat: no-repeat;
+  margin-top: 5px;
+}
+.icon-menu {
+  background-image:url('/assets/image/icon-menu.png');
+}
+.icon-menu:hover {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-menu-hover.png');
+}
+.icon-menu-close {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-menu-close.png');
+}
+.icon-menu-close:hover {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-menu-close-hover.png');
+}
+
+.logo {
+  /* background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/logo-dark-ml.png'); */
+  background: transparent;
+}
+
+.main-search-input input[type=submit] {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-spyglass-dark.png');
+  background-size: 100%;
+}
+
+.main-search-dropdown .selected, h3.icon {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-arrow-down-dark.png');
+  background-size: 10%;
+  background-position: right 12px center;
+}
+.main-search-dropdown .selected, h3.icon.up{
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-arrow-up-dark.png');
+}
+
+.footer-logo, .logo-light {
+  /* background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/logo-light-ml.png'); */
+  background: transparent;
+  background-size: 100%;
+}
+.btn-cart {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-cart-dark.png');
+  background-size:100%;
+  position: relative;
+  top: -10px;
+  left: 10px;
+}
+.btn-cart:hover {
+  background-image: url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-cart-dark-hover.png');
+}
+.track-thumb {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/logo-A-black.png');
+  background-size:40%;
+  width: 70px;
+}
+
+md-chip .mat-icon{
+  font-size:12px;
+  height: auto;
+  width: auto;
+  position: relative;
+  top: 2px;
+}
+md-icon:hover {
+  color:#FD3F92;
+}
+
+.icon-x {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-x.png');
+  background-size:100%;
+  width:10px;
+  height:10px;
+  display:inline-block;
+}
+.icon-x:hover {
+  background-image: url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-x-hover.png');
+}
+
+.icon-play, .icon-pause {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-play.png');
+  background-size:80%;
+  width:50px;
+  height:50px;
+}
+.icon-track-pause,
+.icon-track-paused,
+.icon-track-play {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-play-white.png');
+  background-size:80%;
+  width:55px;
+  height:55px;
+  display:none;
+  margin: 0 10px 0 5px;
+  position: absolute;
+}
+.icon-track-play-white {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-play-white.png');
+  background-size:80%;
+  width:50px;
+  height:50px;
+}
+
+.icon-track-now-white {
+  background-image:url('/assets/image/icon-now.png');
+  background-size:80%;
+  width:30px;
+  height:30px;
+}
+.icon-track-pause, .icon-track-paused{
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-pause-white.png');
+}
+.icon-track-paused {
+  display:block;
+}
+
+.icon-play:hover, .icon-track-play-white:hover {
+  background-image: url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-play-hover.png');
+}
+
+.icon-track-play-show {
+  display:block;
+  background-color: rgba(0,0,0,.5);
+}
+.icon-pause {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-pause.png');
+}
+.icon-pause:hover {
+  background-image: url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-pause-hover.png');
+
+}
+.icon-play-previous {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-rev.png');
+  background-size:50%;
+  width:30px;
+  height:30px;
+  position: relative;
+  top: 11px;
+}
+.icon-play-previous:hover {
+  background-image: url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-rev-hover.png');
+}
+.icon-play-next {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-ff.png');
+  background-size:50%;
+  width:30px;
+  height:30px;
+  position: relative;
+  top: 11px;
+}
+.icon-play-next:hover {
+  background-image: url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-ff-hover.png');
+}
+.icon-sound, .icon-sound-off {
+  padding-left:20px;
+}
+.icon-sound, .icon-sound-off {
+  width:50px;
+  height:30px;
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-sound-on.png');
+  background-size: 20px;
+  padding-top: 15px;
+  padding-right: 5px;
+}
+
+.icon-sound:hover {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-sound-on-hover.png');
+}
+.icon-sound-off {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-sound-off.png');
+}
+.icon-sound-off:hover {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-sound-off-hover.png');
+}
+.icon-close {
+  width:30px;
+  height:100%;
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-close.png');
+  position: absolute;
+  right:10px;
+}
+.icon-close:hover {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-close-hover.png');
+}
+.dialog .icon-close{
+  position: relative;
+}
+.icon-track-menu {
+  width:30px;
+  height:100%;
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-menu.png');
+}
+.icon-track-menu:hover {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-menu-hover.png');
+}
+.icon-staff-pick {
+  display: block;
+  background-size:23px;
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-staff-pick.png');
+}
+.icon-staff-pick:hover {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-staff-pick-hover.png');
+}
+.icon-instrumental {
+  display: block;
+  width: 30px;
+  background-size: 45%;
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-mic-off.png');
+}
+.icon-instrumental:hover {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-mic-off-hover.png');
+}
+.icon-fav {
+  width:30px;
+  height:100%;
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-favorite.png');
+}
+
+.icon-fav:hover, .icon-fav-highlight {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-favorite-hover.png');
+}
+.icon-account-fav {
+  width:30px;
+  height:100%;
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-heart-dark.png');
+  background-size: 40%;
+  top: -10px;
+  position: relative;
+}
+.icon-account-fav:hover {
+  background-image: url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-heart-dark-hover.png');
+}
+.icon-profile {
+  width:30px;
+  height:100%;
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-user-dark.png');
+  background-size: 40%;
+  top: -10px;
+  position: relative;
+}
+.icon-profile:hover {
+  background-image: url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-user-dark-hover.png');
+}
+.icon-add {
+  width:30px;
+  height:100%;
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-add.png');
+}
+.icon-add:hover {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-add-hover.png');
+}
+.icon-share {
+  width:30px;
+  height:100%;
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-share.png');
+}
+.icon-share:hover {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-share-hover.png');
+}
+.icon-download {
+  position: relative;
+  left: -10px;
+  width:40px;
+  height:100%;
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-download.png');
+}
+.icon-download:hover {
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-download-hover.png');
+}
+
+.icon-back{
+  background-size: 7%;
+  padding-left: 15px;
+  background-position: center left;
+  background-image:url('https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-arrow-left-dark.png');
+}
+.icon-next {
+  background-size: 8%;
+  padding-right: 15px;
+  background-position: center right;
+  background-image: url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-arrow-right-dark.png);
+}
+
+
+@media (max-width: 800px)  {
+  .no-text.icon.icon-fav {
+    width:30px;
+  }
+  .icon.icon-instrumental{
+    width:20px;
+  }
+}

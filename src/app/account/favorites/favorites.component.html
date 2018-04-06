@@ -1,0 +1,40 @@
+<div class="hero-inner-container account">
+  <div class="hero-content">
+    <div class="thumb" ></div><!-- style="background-image:url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/thumb-account-image.jpg);" -->
+    <p>{{user.first_name}} {{user.last_name}}</p>
+  </div>
+
+  <app-account-menu></app-account-menu>
+
+  <div class="hero-inner-tint dark"></div>
+</div>
+
+<div class="flex-content m-b-large">
+  <section class="browse m-l-large m-r-large m-b-large">
+
+
+    <span *ngIf="!hasTracks">
+      <div class="content center">
+        <h2 class=" m-tb-large">It looks like you haven’t added your favorite tracks yet!</h2>
+        <button md-button class="clear btn btn-primary center m-t-medium" [routerLink]="['/browse']">Browse Our Music</button>
+      </div>
+    </span>
+
+    <span *ngIf="hasTracks">
+      <h4 class="m-tb-medium m-0">Favorite Tracks</h4>
+      <div class="border-bottom">
+      <span *ngFor="let track of tracks">
+          <app-track
+            [track]="track"
+            [title]="track?.title"
+            [artist]="track?.artist.name"
+            [playtime_min]="track?.playtime_min"
+            [playtime_sec]="track?.playtime_sec"
+          ></app-track>
+      </span>
+      </div>
+
+    </span>
+
+  </section>
+</div>

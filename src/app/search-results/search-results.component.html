@@ -1,0 +1,65 @@
+<div class="flex-container-columns" *ngIf="search?.length > 1">
+  <div class="flex-body">
+    <div class="p-l-large flex-aside-left">
+      <h2 class="border-grey-bottom m-b-medium">Playlist</h2>
+      <div *ngIf="playlists === -1">
+        <div class="no-results">No playlists found.</div>
+      </div>
+      <span *ngIf="playlists !== -1">
+        <div class="list-item overflow m-b-medium" *ngFor="let playlist of playlists" >
+          <span class="thumb-container fl m-r-medium">
+            <!--<span class="thumb " style="background-image: url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/logo-A-black.png);"></span>-->
+            <!--<div class="hero-inner artist full" [style.backgroundImage]="'url(' + (banner) + ')'"></div>-->
+            <div (click)="onClickPlaylist(playlist)" class="thumb cursor" *ngIf="playlist.image != undefined">
+              <img src="{{path+playlist.image }}">
+            </div>
+          </span>
+          <a (click)="onClickPlaylist(playlist)" class="artist block" [innerHtml]="playlist?.title"></a>
+          <span class="count block">{{playlist?.tracks?.length}} Tracks</span>
+        </div>
+      </span>
+
+    </div>
+
+    <div class="lyrics flex-content-middle m-b-large m-lr-large">
+      <h2 class="border-grey-bottom m-b-medium">Lyrics</h2>
+
+      <div *ngIf="tracks === -1">
+        <div class="no-results">No tracks found.</div>
+      </div>
+      <div  *ngIf="tracks !== -1">
+        <md-toolbar color="secondary" *ngFor="let track of tracks"  (click)="onNavigateToArtist(track)" class="cursor">
+          <span class="fl block m-l-small  font-small">
+            <span class="title block m-r-small cursor hover-primary"  [innerHtml]="track.title"></span><!-- (click)="onNavigateToTrack(track)" -->
+            <span class="artist block m-r-small cursor hover-primary" [innerHtml]="track.artist.name"></span>
+          </span>
+          <div class="fr txt-lyrics block m-l-small" [innerHtml]="track.phrase"></div>
+
+        </md-toolbar>
+      </div>
+
+    </div>
+
+    <div class="p-r-large flex-aside-right">
+      <h2 class="border-grey-bottom m-b-medium">Artists</h2>
+
+      <div *ngIf="artists === -1">
+        <div class="no-results">No artists found.</div>
+      </div>
+      <span *ngIf="artists !== -1">
+        <div class="list-item overflow m-b-medium" *ngFor="let artist of artists" >
+          <span class="thumb-container fl m-r-medium">
+            <!--<span class="thumb " style="background-image: url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/logo-A-black.png);"></span>-->
+            <div (click)="onClickArtist(artist)" class="thumb cursor" *ngIf="artist?.image != undefined">
+              <img src="{{path+artist?.image }}">
+            </div>
+          </span>
+          <a (click)="onClickArtist(artist)" class="artist block" [innerHtml]="artist?.name"></a>
+          <span class="count block">{{artist?.albums?.length}} Albums | {{artist?.tracks?.length}} Tracks</span>
+        </div>
+      </span>
+
+    </div>
+  </div>
+</div>
+

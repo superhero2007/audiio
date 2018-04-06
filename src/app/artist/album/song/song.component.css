@@ -1,0 +1,12 @@
+.single {
+  border-bottom: 1px solid #D8D8D8;
+  display: block;
+}
+
+.flist li{
+  margin-bottom:10px;
+}
+
+.hero-content img {
+  width:100%;
+}

@@ -1,0 +1,18 @@
+<md-toolbar style="width:100%" color="secondary" class="download track">
+  <span class="track-info">
+    <span class="icon no-text icon-track-play" [class.icon-track-play-show]="mouseOver" (click)="onPlayPause(track)">Play</span>
+    <span class="track-thumb icon m-r-small cursor hover-primary fl" (click)="onNavigateToAlbum()"> <img src="{{track_thumb}}"></span>
+    <span class="track-title" style="width:100%">
+      <span class="title block m-r-small cursor hover-primary" (click)="onNavigateToTrack()" [innerHtml]="track.title"></span>
+      <span class="artist block m-r-small cursor hover-primary" (click)="onNavigateToArtist()" [innerHtml]="track.artist.name"></span>
+    </span>
+  </span>
+  <span class="desktop ">#{{track.license.order_number}}</span>
+  <span class="desktop ">{{track.license.purchase_date | date: 'dd/MM/yyyy'}}</span>
+  <button md-button class="btn btn-small btn-primary btn-grey " (click)="onReceipt(track)" style="margin-right:10px;">Receipt</button>
+  <a md-button class="desktop btn btn-small btn-primary btn-grey " (click)="onDownload(track)">Download</a>
+</md-toolbar>
+
+<div style="display:none" (click)="onPlay(track)">
+  <div style="width:200px" id="waveform-{{track.id}}"></div>
+</div>

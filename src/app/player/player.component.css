@@ -1,0 +1,29 @@
+:host {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 5;
+  box-shadow: 1px 12px 25px rgba(0,0,0,.7);
+}
+.play-controls {
+  margin: 0 auto;
+  display: block;
+  position: absolute;
+  left: 50%;
+  margin-left: -67px;
+}
+.seek-slider {
+  min-width:80px;
+  display: flex;
+}
+.track-thumb{
+
+}
+.track-thumb img {
+  width:60px;
+}
+.play-time-volume {
+  display: flex;
+  width:100%;
+  min-width:300px;
+}

@@ -1,0 +1,42 @@
+<md-toolbar *ngIf="!error" class="track cursor" (mouseover)="mouseOver=true" (mouseout)="mouseOver=false">
+  <span *ngIf="!playing" class="icon no-text icon-track-play" [class.icon-track-play-show]="mouseOver" (click)="onPlay(track)"  >Play</span>
+  <span *ngIf="playing"  class="icon no-text icon-track-paused" [class.icon-track-play-show]="mouseOver" (click)="onPause(track)"  >Pause</span>
+  <span style="" class="track-thumb icon m-r-small cursor hover-primary" (click)="onNavigateToAlbum()">
+      <img *ngIf="track_thumb" [src]="track_thumb">
+    </span>
+  <span class="track-title">
+    <span class="title block m-r-small cursor hover-primary" (click)="onNavigateToTrack()" [innerHtml]="title"></span>
+    <span class="artist block m-r-small cursor hover-primary" (click)="onNavigateToArtist()" [innerHtml]="artist"> </span>
+  </span>
+  <div class="staff-pick" ><span mdTooltip="Staff Pick!" class="icon no-text icon-staff-pick block" *ngIf="track?.staff_pick">staff pick</span></div>
+  <span class="dropdown-horizontal" >
+
+    <span class="desktop">
+      <span class="icon no-text icon-track-menu" *ngIf="state == 'hideActions'" (click)="toggleActions()">menu</span>
+      <span class="icon no-text icon-close"      *ngIf="state == 'showActions'" (click)="toggleActions()">close</span>
+      <span class="track-actions" [@showHideActions]="state">
+        <span *ngIf="!favorite" class="icon no-text icon-fav" [@buttonBounceLeft]="state" (click)="onFavorite()">favorite</span>
+        <span *ngIf="favorite" class="icon no-text icon-fav icon-fav-highlight" [@buttonBounceLeft]="state" (click)="onFavorite()">favorite</span>
+        <!--<span class="icon no-text icon-add" [@buttonBounceLeft]="state" (click)="onAdd()">add</span>
+        <span class="icon no-text icon-share" [@buttonBounceLeft]="state" (click)="onShare()" md-button>share</span>-->
+        <a  download="true" class="icon no-text icon-download" [@buttonBounceLeft]="state" (click)="onDownload()">download</a>
+
+      </span>
+    </span>
+    <span class="mobile">
+      <span *ngIf="!favorite" class="fr icon no-text icon-fav" (click)="onFavorite()">favorite</span>
+      <span *ngIf="favorite" class="fr icon no-text icon-fav icon-fav-highlight" (click)="onFavorite()">favorite</span>
+            <span *ngIf="track?.vocal_none" class="fr icon no-text icon-instrumental" >instrumental</span>
+
+    </span>
+  </span>
+  <div class="desktop" style="overflow:hidden; width:600px" (click)="onSeek($event, track)" id="waveform-{{track?.id}}"></div><!--(click)="onPlay(track)"-->
+  <div class="desktop instrumental" >
+    <span mdTooltip="Instrumental Track" class="icon no-text icon-instrumental block" *ngIf="track?.vocal_none">instrumental</span>
+  </div>
+  <span class="time" style="">{{playtime_min }}:{{playtime_sec | trackSeconds}}</span>
+  <div class="btn-wide desktop">
+    <button [ngClass]="{'active': track?.inCart}" (click)="onLicense()" md-button class="fr btn btn-small btn-primary " type="submit">License</button>
+  </div>
+</md-toolbar>
+

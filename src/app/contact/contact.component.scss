@@ -1,0 +1,111 @@
+.contactContainer {
+  margin-top: 90px;
+}
+#contact-banner, #contact-banner-mobile {
+  background: url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/contact-1024x311.jpg);
+  background-repeat: no-repeat;
+  /*background-attachment: fixed;*/
+  background-size: 100%;
+  background-position: top center;
+
+  .headline {
+    width: 54%;
+    text-align: center;
+    margin: auto;
+    padding: 0 19%;
+    h1, h2 {
+      color: #fff;
+
+    }
+    h1 {
+      font-family: SourceSansPro-Bold;
+      font-weight: 900;
+      font-size: 4em;
+      margin: 0;
+      padding-top: 20%;
+    }
+    h2 {
+      font-family: SourceSansPro-Light, sans-serif;
+      font-size: 1.2em;
+      font-weight: normal;
+    }
+  }
+}
+
+.form-container {
+  width: 50%;
+  margin: 6em auto;
+
+  md-select {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+  .form-row {
+    clear: both;
+    &.m-t-xlarge {
+      margin-top: 3em;
+    }
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+  .mat-input-container, .form-row {
+    width: 100%;
+    display: block;
+
+    &.half-width {
+      float: left;
+      width: 50%;
+
+      &:first-child {
+        width: calc(50% - 2em);
+        margin-right: 2em;
+      }
+    }
+  }
+
+  .btn {
+    &.btn-primary {
+      padding: .5em 1.5em;
+      border-radius: 4px;
+      margin: auto;
+      margin-top: 2em;
+    }
+  }
+}
+
+#call-us {
+  display: block;
+  margin-top: 4em;
+  text-align: center;
+}
+
+.form-container{
+  width:50%;
+  margin: 6em auto;
+}
+
+@media (max-width: 800px) {
+
+  #contact-banner-mobile {
+    margin-bottom: 40px;
+    .headline {
+      padding:10px;
+      width:auto;
+      h1{
+        font-size:130%;
+        padding-top:5%;
+      }
+      h2 {
+        font-size:16px;
+      }
+    }
+  }
+  .form-container {
+    padding: 10px;
+    margin: 10px;
+    width: auto;
+  }
+}

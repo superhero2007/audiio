@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Audiio</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="/favicon.png">
+  <!-- Global site tag (gtag.js) - Google AdWords: 845421511 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-845421511"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-845421511');
+  </script>
+
+  <!-- Event snippet for Registration conversion page
+  In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+  <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-845421511/AwxaCPyJkHoQx7eQkwM',
+        'event_callback': callback
+    });
+    return false;
+  }
+  </script>
+
+  <!-- Event snippet for Checkout conversion page -->
+  <script>
+    gtag('event', 'conversion', {
+        'send_to': 'AW-845421511/Kgp6CMiJjHMQx7eQkwM',
+        'value': 50.0,
+        'currency': 'USD',
+        'transaction_id': ''
+    });
+  </script>
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '772995646221272');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=772995646221272&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
+
+  <script>
+    fbq('track', 'Purchase', {
+      value: 0,
+    });
+  </script>
+
+  <script>
+    fbq('track', 'CompleteRegistration');
+  </script>
+</head>
+<body >
+  <app-root style="height:100%"></app-root>
+
+  <script src="https://d3rtks05ujgkhe.cloudfront.net/assets/Wavesurfer.js"></script>
+  <script src="https://d3rtks05ujgkhe.cloudfront.net/assets/StripeV3.js"></script>
+  <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+
+
+<!--  <script src="//cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.4.0/wavesurfer.min.js"></script>
+  <script src="https://d3rtks05ujgkhe.cloudfront.net/assets/StripeV3.js"></script>
+  <script src="//www.googleadservices.com/pagead/conversion_async.js"></script>-->
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-92772542-1', 'auto');
+  </script>
+</body>
+</html>

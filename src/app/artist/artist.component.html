@@ -1,0 +1,47 @@
+<div class="hero-inner-container artists desktop">
+  <div class="hero-content">
+    <h1 [innerHtml]="artist['name']"></h1>
+    <p [innerHtml]="artist['description']"></p>
+    <!--<div class="btn-holder center-table">
+      <button md-button class="btn btn-small btn-invert block fl m-r-medium" >Play</button>
+      <button md-button class="btn btn-small btn-invert block fl m-l-large" >Share</button>
+    </div>-->
+  </div>
+  <div class="hero-inner-tint"></div>
+  <!-- <div class="hero-inner artist" ></div>style="background-image:url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/artist-banner.jpg);" -->
+  <div class="hero-inner artist full" [style.backgroundImage]="'url(' + (banner) + ')'"></div>
+
+</div>
+
+<div class="flex-content m-b-large">
+  <section class="browse m-l-large m-r-large m-b-large ">
+    <h4 class="m-tb-medium m-0">All Tracks by <span [innerHtml]="artist['name']"></span> <strong
+      class="uppercase font-medium txt-primary m-l-medium cursor" [routerLink]="['/browse']">Browse All Tracks</strong>
+    </h4>
+
+    <div *ngIf="!hasTracks">
+      <div class="no-results">No tracks found.</div>
+    </div>
+    <span *ngIf="hasTracks">
+      <div class="border-bottom">
+          <span *ngFor="let track of tracks | orderByPipe : 'title'; let i=index">
+            <app-track
+
+              [track]="track"
+              [title]="track.title"
+              [artist]="track.artist.name"
+              [playtime_min]="track.playtime_min"
+              [playtime_sec]="track.playtime_sec"
+            ></app-track>
+          </span>
+      </div>
+    </span>
+
+
+  </section>
+
+
+</div>
+
+
+<app-related-artists></app-related-artists>

@@ -1,0 +1,299 @@
+<div class="page ">
+  <div class="hero-inner-headline checkout">
+    <div class="hero-content">
+      <h1>Buy Your Music </h1>
+    </div>
+  </div>
+
+
+  <article class="checkout content font-medium">
+    <div class="flex-container">
+
+      <div class="flex-content  m-r-xlarge m-b-large"><!-- [style.transform]="'translateY(' + (posYOptions) + 'px)'" -->
+        <section class="skinny" id="project" [ngClass]="(checkoutSelected)?'':'ghost'">
+          <div class="m-b-large"><h3 class="center">What type of project are you creating?</h3></div>
+          <md-radio-group class="" [(ngModel)]="project">
+            <div class="m-b-medium block ">
+              <md-radio-button (change)="onProjectChange($event)" class="radio block m-b-small w-full"
+                               *ngFor="let type of projectType" [value]="type">
+                <div>{{type.label}}</div>
+              </md-radio-button>
+            </div>
+          </md-radio-group>
+
+          <div class="btn-holder">
+            <button class="btn btn-primary btn-grey radius-0 m-r-small w-quarter" (click)="onBack($event)">
+              Back
+            </button>
+            <button *ngIf="project" class="btn btn-primary pull-right btn-green w-quarter" (click)="onSelectProject($event)">Continue
+            </button>
+          </div>
+        </section>
+
+        <section class="skinny" id="audience" [ngClass]="(projectSelected)?'':'ghost'">
+          <div class="m-b-medium">
+            <h3 class="center">Where will this media be distributed?
+              <p class="font-mlarge">( Select all that apply. )</p>
+            </h3>
+          </div>
+          <div class="m-b-medium block">
+            <md-checkbox *ngFor="let type of distributionType"
+                         (change)="onDistributionChange($event)" [(ngModel)]="type.checked" class="radio block m-b-small w-full p-l-medium" [value]="type">
+              <div>{{type.label}}</div>
+            </md-checkbox>
+          </div>
+
+          <div class="btn-holder" >
+            <button class="btn btn-primary btn-grey radius-0 m-r-small w-quarter" (click)="onBackToProject($event)">
+              Back
+            </button>
+            <button *ngIf="distribution" class="btn btn-primary pull-right btn-green w-quarter" (click)="onSelectDistribution($event)">
+              Continue
+            </button>
+          </div>
+        </section>
+
+        <div class=""  [ngClass]="(distributionSelected)?'':'ghost'">
+          <div class="m-b-medium"  [hidden]="!showCustomForm"><!--  [ngClass]="{'hidden': isInstant, 'block':showCustomForm}" -->
+            <!-- ONLY SHOW FORM IF ARTISTS HAS LICENSE TURNED OFF ON THE BACKEND -->
+            <section>
+              <div class="m-b-large">
+                <h3 class="center">Quote Request</h3>
+              </div>
+              <md-card class="border-bottom">
+                <p class="small-caps">We will send you pricing info within minutes! </p>
+                <form class="m" [formGroup]="custom">
+                  <table class="" cellspacing="0">
+                    <tr>
+                      <td>
+                        <md-input-container><input formControlName="first_name" mdInput placeholder="First Name">
+                        </md-input-container>
+                      </td>
+                      <td>
+                        <md-input-container><input formControlName="last_name" mdInput placeholder="Last Name">
+                        </md-input-container>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <md-input-container class=""><input formControlName="email" mdInput placeholder="Email">
+                        </md-input-container>
+                      </td>
+                      <!--<td>
+                        <md-input-container class=""><input formControlName="phone" mdInput placeholder="Phone">
+                        </md-input-container>
+                      </td>-->
+                    </tr>
+                    <!--<tr>
+                      <td>
+                        <md-input-container class=""><input formControlName="client" mdInput placeholder="End Client">
+                        </md-input-container>
+                      </td>
+                      <td>
+                        <md-input-container class=""><input formControlName="term" mdInput placeholder="License Term">
+                        </md-input-container>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <md-input-container class="full"><input formControlName="budget" mdInput
+                                                                placeholder="Estimated Budget"></md-input-container>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <md-input-container class="full"><input formControlName="details" mdInput
+                                                                placeholder="Share the details"></md-input-container>
+                      </td>
+                    </tr>-->
+
+                  </table>
+                </form>
+              </md-card>
+
+              <!--<div class="btn-holder">
+                <button class="btn btn-primary pull-right m-r-small" (click)="onBackToDistribution($event)">Back</button>
+                <button class="btn btn-primary pull-right" (click)="onSelectDistribution($event)">Continue</button>
+              </div>-->
+
+            </section>
+          </div>
+
+          <div class="m-b-medium" [hidden]="showCustomForm"><!-- [hidden]="!isInstant"  {'hidden':showCustomForm, 'block': isInstant} -->
+            <section id="payment" >
+              <md-card class="border-bottom">
+                <!--<p class="small-caps">Billing Address </p>-->
+                <form class="m" [formGroup]="form">
+                  <table class="" cellspacing="0">
+                    <tr>
+                      <td>
+                        <md-input-container><input formControlName="first_name" mdInput placeholder="First Name">
+                        </md-input-container>
+                      </td>
+                      <td>
+                        <md-input-container><input formControlName="last_name" mdInput placeholder="Last Name">
+                        </md-input-container>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <md-input-container class=""><input formControlName="email" mdInput placeholder="Email">
+                        </md-input-container>
+                      </td>
+                      <td>
+                        <md-input-container class=""><input formControlName="address" mdInput placeholder="Address">
+                        </md-input-container>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <md-input-container class=""><input formControlName="city" mdInput placeholder="City">
+                        </md-input-container>
+                      </td>
+                      <td>
+                        <md-input-container class=""><input formControlName="state" mdInput placeholder="State">
+                        </md-input-container>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <md-input-container class="">
+                          <input formControlName="postal_code" mdInput #postalCode maxlength="5" placeholder="Postal Code">
+                        </md-input-container>
+                      </td>
+                    </tr>
+
+                  </table>
+                </form>
+                <form class="paylentForm">
+
+                 <!-- <div class="paypal" [hidden]="paymentTypeCredit">
+                    <div id="paypal-button-container"></div>
+                  </div>-->
+                  <div class="credit" [hidden]="!paymentTypeCredit">
+                    <div class="block cc"></div>
+                    <!--<span class="cardNumber">Credit/Debit card number</span>
+                    <span class="cardExp">Expiration </span>-->
+                    <span class="payment-message">{{message}}</span>
+                    <div id="card-element">My Card Elements</div>
+                    <div class="card-footnote">Transactions are secure and encripted.</div>
+                  </div>
+                </form>
+              </md-card>
+            </section>
+
+            <!--<div class="w-full payment-type m-b-medium" >
+              <button md-button [ngClass]="(paymentTypeCredit)?'btn-green-check':''" class="btn btn-primary btn-grey m-t-medium  m-r-medium  inline-block" (click)="onPaymentType(true)">Credit Card</button>
+              <button md-button [ngClass]="(paymentTypeCredit)?'':'btn-green-check'"class="btn btn-primary btn-grey m-t-medium  m-r-medium  inline-block" (click)="onPaymentType(false)"><div id="paypal-button-container"></div></button>
+            </div>-->
+
+
+          </div>
+
+          <div class="btn-checkout">
+            <!--<button class="btn btn-primary btn-grey radius-0 m-r-small w-quarter"
+                    (click)="onBackToDistribution($event)">Back
+            </button>-->
+            <button class="btn btn-primary pull-right btn-green w-quarter" (click)="onSubmitForm($event)">Pay Now ${{payment_amount}}</button>
+            <div class="or">or</div>
+            <div id="paypal-button-container"></div>
+          </div>
+
+        </div>
+
+        <div class="skinny m-tb-medium" [hidden]="!errors">
+            <span *ngFor="let error of errors">
+             <p>{{error}}</p>
+           </span>
+        </div>
+
+        <span *ngIf="!sending && readyToPurchase">
+          <div [hidden]="isInstant">
+
+            <div [hidden]="needsPayment" class="m-tb-medium">
+              <button *ngIf="!sending" md-button class=" clear btn btn-lg btn-primary btn-block btn-signin"
+                      (click)="onSubmitCustomForm()">Complete and send request</button>
+              <p class="font-small">Average response time this month: <span class="highlight">22 minutes</span> (8a - 5p ET) </p>
+            </div>
+            <div [hidden]="!needsPayment" class="m-tb-medium">
+              <button md-button class=" clear btn btn-lg btn-primary btn-block btn-signin" (click)="getToken()">Complete your
+                purchase
+              </button>
+            </div>
+          </div>
+
+          <div [hidden]="!isInstant" class="m-tb-medium">
+            <button *ngIf="!sending" md-button class=" clear btn btn-lg btn-primary btn-block btn-signin"
+                    (click)="onSubmitCustomForm()">Complete and send request</button>
+            <p class="font-small">Average response time this month: <span class="highlight">22 minutes</span> (8a - 5p ET) </p>
+          </div>
+        </span>
+
+        <span *ngIf="sending">
+          <button md-button class="clear btn btn-lg btn-primary btn-block btn-signin">Processing ...</button>
+
+        </span>
+
+      </div>
+
+      <div class="flex-aside large m-r-large m-b-large">
+        <div id="aside-holder">
+          <md-card>
+            <div class="list-item overflow m-b-medium">
+            <span class="thumb-container fl m-r-medium">
+              <div class="thumb">
+                <img src="{{track_thumb}}">
+              </div>
+            </span>
+              <span class="artist block" [innerHtml]="tracks?.title"></span>
+              <span class="count block" [innerHtml]="tracks?.artist.name"></span>
+            </div>
+          </md-card>
+          <md-card>
+            <label>Project</label>
+            <p *ngIf="project">
+              {{project?.label}} <span class="check"></span>
+              <!--<a (click)="onBackToProject($event)" class="change">Change</a>-->
+            </p>
+            <p *ngIf="!project" class="active">
+              Select a Project Type
+            </p>
+          </md-card>
+          <md-card>
+            <label>Distribution</label>
+            <p *ngIf="distribution"><span class="check"></span>
+
+              <span class="block text-capitalize list-distribution"
+                    *ngFor="let distribution of distributions">{{distribution?.label}}</span>
+              <!--<a (click)="onBackToDistribution($event)" class="change">Change</a>-->
+            </p>
+            <p *ngIf="!distribution" class="active">
+              Select a Distribution Plan
+            </p>
+          </md-card>
+          <md-card class="last">
+            <label>Price</label>
+            <span *ngIf="needsPayment">
+              <p>${{payment_amount}} <span class="check"></span></p>
+            </span>
+            <p *ngIf="!needsPayment" class="active">
+              Lets Find It!
+            </p>
+
+          </md-card>
+
+          <div class="p-lr-medium" *ngIf="needsPayment">
+            <div class="small-caps  m-t-medium coupon">
+                <p class="center">Enter Promo Code</p>
+                <md-input-container ><input name="coupon_code" mdInput (blur)="onCouponCode($event)"></md-input-container>
+                <a class="btn-apply" (click)="onCouponCode($event)">Apply</a>
+                <span class="info" [innerHtml]="coupon_info"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </article>
+</div>

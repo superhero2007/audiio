@@ -1,0 +1,67 @@
+<md-slider
+  [thumbLabel]="trackThumbLabel"
+  class="mobile seek-slider"
+  [max]="trackMax"
+  [value]="trackCurrentTime">
+</md-slider>
+
+<md-toolbar color="secondary" id="player">
+    <span class="track-thumb icon m-r-small cursor  hover-primary" style="order:1;"
+          (click)="onNavigateToTrack()">
+      <img *ngIf="track_thumb?.length>0" src="{{track_thumb}}">
+
+    </span>
+  <span style="order:2; flex-grow: 2; ">
+      <span class="title block m-r-small cursor  hover-primary" (click)="onNavigateToTrack()"
+            [innerHtml]="title"></span>
+      <span class="artist block m-r-small cursor hover-primary" (click)="onNavigateToArtist()"
+            [innerHtml]="artist"></span>
+    </span>
+  <div style="display:none" id="player-waveform"></div>
+  <span class="desktop dropdown-horizontal" style="order:3; flex-grow: 30; ">
+
+      <span *ngIf="!favorite" class="icon no-text icon-fav" (click)="onFavorite()">favorite</span>
+      <span *ngIf="favorite" class="icon no-text icon-fav icon-fav-highlight" (click)="onFavorite()">favorite</span>
+
+      <!--<span class="icon no-text icon-add" [@buttonBounceLeft]="state" (click)="onAdd()">add</span>
+      <span class="icon no-text icon-share" [@buttonBounceLeft]="state" (click)="onShare()">share</span>-->
+      <span class="icon no-text icon-download" (click)="onDownload()">download</span>
+    </span>
+
+  <span class="desktop" style="order:4;">
+    <span style="order:4; flex-grow: 100;" class="play-controls">
+        <span (click)="onNext('back')" class="icon no-text icon-play-previous cursor hover-primary">skip previous</span>
+        <span *ngIf="!playing" (click)="onPlay()" class="icon no-text icon-play cursor hover-primary">play</span>
+        <span *ngIf="playing" (click)="onPause()" class="icon no-text icon-pause cursor hover-primary">pause</span>
+        <span (click)="onNext('forward')" class="icon no-text icon-play-next cursor hover-primary">skip next</span>
+      </span>
+    <span style="order:5; flex-grow:0;" class="play-time-volume">
+        <span class="time_played">{{ elapsed }}</span>
+        <md-slider
+          (change)="onSeekChange($event)"
+          (input)="onSeekDrag($event)"
+          [thumbLabel]="trackThumbLabel"
+          class="seek-slider"
+          [max]="trackMax"
+          [value]="trackCurrentTime">
+        </md-slider>
+      <!--<md-slider thumbLabel min="1" [max]="total" step="1" [value]="elapsed" class="seek-slider"></md-slider>-->
+        <span class="time_remaining">{{total}}</span>
+        <span *ngIf="!isMute" class="icon no-text icon-sound cursor hover-primary" (click)="onMute()">mute</span>
+        <span *ngIf="isMute" class="icon no-text icon-sound-off cursor hover-primary" (click)="onMute()">mute</span>
+        <md-slider
+          style="width:80px"
+          (change)="onVolumeChange($event)"
+          [value]="volume"
+          (input)="onSeekVolume($event)"
+          class="volume-slider">
+        </md-slider>
+        </span>
+  </span>
+
+  <span class="mobile play-controls fr">
+    <span *ngIf="!playing" (click)="onPlay()" class="fr icon no-text icon-play cursor hover-primary">play</span>
+    <span *ngIf="playing" (click)="onPause()" class="fr icon no-text icon-pause cursor hover-primary">pause</span>
+  </span>
+
+</md-toolbar>

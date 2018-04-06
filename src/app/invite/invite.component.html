@@ -1,0 +1,36 @@
+
+<div class="dialog" >
+  <span class="fr icon no-text icon-close cursor" (click)="gotoBrowse()" >X</span>
+  <form class=" " [formGroup]="form"  novalidate (ngSubmit)="submitForm(form)">
+    <h1 class="center m-b-medium">Congrats, you're in! </h1>
+    <p class="center" >No need to hide your excitement! Invite 3 friends to AUDIIO and your first personal use license is on us.</p>
+    <div class="body">
+      <table class="" cellspacing="0">
+        <tr>
+          <td >
+            <md-input-container><input mdInput formControlName="email1" type="email" placeholder="Friend 1 Email Address"> </md-input-container>
+          </td>
+        </tr>
+        <tr>
+          <td >
+            <md-input-container><input mdInput formControlName="email2" type="email" placeholder="Friend 2 Email Address"> </md-input-container>
+          </td>
+        </tr>
+        <tr>
+          <td >
+            <md-input-container><input mdInput formControlName="email3" type="email" placeholder="Friend 3 Email Address"> </md-input-container>
+          </td>
+        </tr>
+      </table>
+
+      <button md-button type="submit"  class="center clear btn btn-lg btn-primary btn-block btn-signin overflow">
+        Invite
+      </button>
+
+    </div>
+
+  </form>
+
+  <p class="sign-up">No thanks, <a class="txt-secondary" (click)="gotoBrowse()">take me to the music!</a></p>
+
+</div>

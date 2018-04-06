@@ -1,0 +1,95 @@
+<md-sidenav-container id="container"   [ngClass]="(showPlayer)?'show-player':'hide-player'">
+
+  <app-menu-main  (searchTermUpdate)="onSearchUpdate($event)" [isLoggedIn]="isLoggedIn"></app-menu-main>
+  <router-outlet scrollSpy style="position: relative" (activate)="onChangeRoute()"></router-outlet>
+
+
+  <app-search-results [search]="searchInput" ></app-search-results>
+  <app-menu-footer [ngClass]="(showPlayer)?'show-player':'hide-player'"></app-menu-footer>
+
+</md-sidenav-container>
+<div class="desktop">
+  <div id="spyHomeSlides" class="controls">
+    <scrollSpy-index-render
+      [scrollSpyIndexRenderOptions]="{id: 'home', spyId: 'window', topMargin: 0}"
+      [scrollSpyAffix]="{topMargin: 0, bottomMargin: 0}">
+    </scrollSpy-index-render>
+  </div>
+</div>
+
+
+<app-player *ngIf="showPlayer"
+            [title]="title"
+            [artist]="artist"
+            [album]="album"
+            [track_thumb]="track_thumb"
+            [current]="position"
+            [elapsed]="elapsed"
+            [duration]="duration"
+            [total]="duration"
+            (backward)="handleBackward()"
+            (forward)="handleForward()"
+            (pauseplay)="handlePausePlay($event)"
+            [playing]="playing"
+            (stop)="handleStop($event)">
+</app-player>
+
+<div style="display:none">
+
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/mask-home.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-menu.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-menu-hover.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-menu-close.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-menu-close-hover.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/logo-dark-ml.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-spyglass-dark.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-arrow-down-dark.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/logo-light-ml.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-cart-dark.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-cart-dark-hover.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/logo-A-black.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-x.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-x-hover.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-play.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-play.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-play-hover.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-pause.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-pause-hover.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-rev.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-rev-hover.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-ff.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-ff-hover.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-sound-on.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-sound-off.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-sound-on-hover.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-sound-off-hover.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-close.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-close-hover.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-menu.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-menu-hover.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-staff-pick.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-staff-pick-hover.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-mic-off.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-mic-off-hover.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-favorite.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-favorite-hover.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-heart-dark.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-heart-dark-hover.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-user-dark.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-user-dark-hover.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-add.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-add-hover.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-share.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-share-hover.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-download.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-trackbar-download-hover.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-play-white.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-pause-white.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/arrow-up-white.png">
+  <img src="https://d3rtks05ujgkhe.cloudfront.net/assets/image/icon-user-dark-hover.png">
+
+</div>
+
+
+
+

@@ -1,0 +1,73 @@
+<div class="hero-inner-container song desktop">
+  <div class="hero-content">
+    <div class="thumb"  *ngIf="track_thumb?.length > 0">
+      <img width="200px" height="200px" src="{{track_thumb}}">
+
+    </div>
+
+    <h1 [innerHtml]="title"></h1>
+    <p [innerHtml]="artistName"></p>
+  </div>
+  <div class="hero-inner-tint dark"></div>
+</div>
+
+
+
+<div class="flex-container">
+  <div class="flex-content">
+    <section class="browse m-l-large m-r-large m-b-large">
+      <h4 class="m-tb-medium m-0">Track <span [innerHtml]="title"></span><strong
+        class="uppercase font-medium txt-primary m-l-medium cursor" [routerLink]="['/browse']">Browse All
+        Tracks</strong></h4>
+
+      <div *ngIf="!hasTracks">
+        <div class="no-results">No tracks found.</div>
+      </div>
+      <span *ngIf="hasTracks">
+          <span *ngFor="let track of tracks">
+            <app-track
+              class="single"
+              [track]="track"
+              [title]="title"
+
+              [artist]="artistName"
+              [playtime_min]="track?.playtime_min"
+              [playtime_sec]="track?.playtime_sec"
+            ></app-track>
+          </span>
+        </span>
+
+
+    </section>
+
+    <div class="desktop">
+      <div style=" display: flex; flex-direction: row; " class="flex-container m-b-large">
+      <md-card style="flex-grow:1; order:1;" class="flex-content m-r-large m-l-large">
+        <h2 class="border-grey-bottom m-b-medium">Genres</h2>
+        <ul class="flist text-capitalize" *ngFor="let prop of genres">
+          <li><a href="/browse?genre={{prop}}">{{prop}}</a></li>
+        </ul>
+      </md-card>
+
+      <md-card style="flex-grow:1; order:2;" class="flex-content m-r-large">
+        <h2 class="border-grey-bottom m-b-medium">Mood</h2>
+        <ul class="flist text-capitalize" *ngFor="let prop of moods">
+          <li><a href="/browse?mood={{prop}}">{{prop}}</a></li>
+        </ul>
+      </md-card>
+
+      <md-card style="flex-grow:1; order:3;" class="flex-content m-r-large">
+        <h2 class="border-grey-bottom m-b-medium">Elements</h2>
+        <ul class="flist text-capitalize" *ngFor="let prop of elements">
+          <li><a href="/browse?ele={{prop}}">{{prop}}</a></li>
+        </ul>
+      </md-card>
+    </div>
+    </div>
+  </div>
+  <div *ngIf="hasLyrics" class="flex-aside large m-r-large m-b-large">
+    <h2 class="border-grey-bottom m-b-medium">Lyrics</h2>
+    <div [innerHtml]="lyrics"></div>
+  </div>
+</div>
+<app-featured-playlists></app-featured-playlists>

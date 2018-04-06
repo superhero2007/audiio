@@ -1,0 +1,41 @@
+<div class="desktop hero-inner-container playlist">
+  <div class="hero-content">
+    <h1>{{playlist?.title}} </h1>
+    <p>{{playlist?.description}}</p>
+
+  </div>
+  <div class="hero-inner-tint"></div>
+  <!--<div class="hero-inner artist" style="background-image:url(https://d3rtks05ujgkhe.cloudfront.net/assets/image/featured-playlist-banner.jpg);"></div>-->
+  <div class="hero-inner artist full" [style.backgroundImage]="'url(' + (banner) + ')'">
+
+  </div>
+</div>
+
+
+<div class="flex-content m-b-large">
+  <section class="browse m-l-large m-r-large m-b-large ">
+    <h4 class="m-tb-medium m-0">Playlist {{playlist?.title}} <strong
+      class="uppercase font-medium txt-primary m-l-medium cursor" [routerLink]="['/playlists']">Browse All
+      Playlists</strong></h4>
+
+
+    <div *ngIf="hasTracks" class="border-bottom">
+          <span *ngFor="let track of tracks | orderByPipe: 'title';">
+            <app-track
+              [track]="track"
+              [title]="track?.title"
+              [artist]="track?.artist.name"
+              [playtime_min]="track?.playtime_min"
+              [playtime_sec]="track?.playtime_sec"
+            ></app-track>
+          </span>
+    </div>
+
+
+  </section>
+
+
+</div>
+
+
+<app-related-artists></app-related-artists>
